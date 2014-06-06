@@ -6,6 +6,8 @@
 		host: '172.16.23.103',
 		port: 6379,
 		storage: {
+			userPrefix: 'md.ytx.',
+			userExpiretime : 720 //分钟，超时时间
 		}
 	},
 	mdapi: {
@@ -36,10 +38,7 @@
 		resturi: 'https://app.cloopen.com:8883',
 		baseUrl: 'https://sandboxapp.cloopen.com:8883',
 		softVersion: '2013-12-26',
-		log : '',
-		api: {
-
-		}
+		log: ''
 	},
 	filepath: 'd:/weixin/',
 	logpath: 'd:/log.txt'
@@ -49,4 +48,7 @@ exports.config = config;
 var accessHandler = require("./lib/access");
 var handle = {};
 handle["/"] = accessHandler.homepage;
+handle["/getuser"] = accessHandler.getAccount;
+handle["/createConf"] = accessHandler.createConf;
+
 exports.router = handle;

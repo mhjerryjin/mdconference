@@ -69,7 +69,7 @@ function WriteMsg(res, req, reply, isjson, ok) {
 	res.writeHead(200, { "Content-Type": "application/json" });
 	if (ok) {
 		if (IsNullOrEmpty(reply))
-			res.write(JSON.stringify({ "MSG": "T" }));
+			res.write(JSON.stringify({ status: "1" }));
 		else if (isjson) {
 			res.write(JSON.stringify(reply));
 		}
@@ -77,7 +77,7 @@ function WriteMsg(res, req, reply, isjson, ok) {
 			res.write(reply);
 	}
 	else
-		res.write(JSON.stringify({ "MSG": "F" }));
+		res.write(JSON.stringify({ status: "0" }));
 
 	res.end();
 };
@@ -132,6 +132,18 @@ function RandomNumbers(number) {
 	return str;
 };
 
+//获取提交内容
+function getRequestResut(res, req, callback) {
+	var body = '';
+	req.on('data', function (data) {
+		body += data;
+	});
+
+	req.on('end', function () {
+		callback(body);
+	});
+};
+
 exports.Replace = Replace;
 exports.PartOfReplace = PartOfReplace;
 exports.ArrayContains = ArrayContains;
@@ -144,5 +156,4 @@ exports.Timestamp = Timestamp;
 exports.Time = Time;
 exports.Validateint = IsInt;
 exports.GetRandom = RandomNumbers;
-
-//console.log(this.Time());
+exports.GetReqResut = getRequestResut;
