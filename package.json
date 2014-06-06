@@ -1,0 +1,29 @@
+{
+	"name": "mdconference",
+	"version": "1.0.0",
+	"description": "明道语音会议",
+	"keywords": [
+		"mingdao",
+		"conference"
+	],
+	"dependencies": {
+		"async": ">=0.2.9",
+		"xml2js": "*",
+		"memcached": ">=0.2.6",
+		"redis": ">=0.8.6",
+		"request": ">=2.27.0",
+		"yuntongxun": ">=0.0.1"
+	},
+	"devDependencies": {
+	},
+	"contributors": [
+		{
+			"name": "Jerry",
+			"email": "jerry.jin@mingdao.com"
+		},
+		{
+			"name": "Jan",
+			"email": "jan.zhu@mingdao.com"
+		}
+	]
+}
