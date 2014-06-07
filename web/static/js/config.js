@@ -1,9 +1,9 @@
 var config={
 	yuntongxun:{
-		url:'http://172.16.21.101/',
+		base:'http://mdconf.mingdao.com/',
+		url:'ajax/yuntongxun.php',
 		geturl:function($controller){
-			return config.yuntongxun.url+$controller;
+			return config.yuntongxun.url+'?op='+$controller;
 		}
-	},
-	appid:'1234567890'
+	}
 }

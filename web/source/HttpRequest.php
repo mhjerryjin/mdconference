@@ -1,7 +1,50 @@
 <?php
 
 class HttpRequest{
-	
+	/**
+	 * Set timeout default.
+	 *
+	 * @ignore
+	 */
+	public $timeout = 30;
+	/**
+	 * Set connect timeout.
+	 *
+	 * @ignore
+	 */
+	public $connecttimeout = 30;
+	/**
+	 * Verify SSL Cert.
+	 *
+	 * @ignore
+	 */
+	public $ssl_verifypeer = FALSE;
+	/**
+	 * Respons format.
+	 *
+	 * @ignore
+	 */
+	public $format = 'json';
+	/**
+	 * Decode returned json data.
+	 *
+	 * @ignore
+	 */
+	public $decode_json = TRUE;
+	/**
+	 * Contains the last HTTP headers returned.
+	 *
+	 * @ignore
+	 */
+	public $http_info;
+	/**
+	 * print the debug info
+	 *
+	 * @ignore
+	 */
+	public $debug = FALSE;
+
+
 	function get($url, $parameters = array()) {
 		$response = $this->oAuthRequest($url, 'GET', $parameters);
 		if ($this->format === 'json' && $this->decode_json) {
@@ -10,7 +53,9 @@ class HttpRequest{
 		return $response;
 	}
 	function post($url, $parameters = array(), $multi = false) {
+
 		$response = $this->oAuthRequest($url, 'POST', $parameters, $multi );
+
 		if ($this->format === 'json' && $this->decode_json) {
 			return json_decode($response, true);
 		}
@@ -25,9 +70,7 @@ class HttpRequest{
 	}
 	function oAuthRequest($url, $method, $parameters, $multi = false) {
 
-		if (strrpos($url, 'http://') !== 0 && strrpos($url, 'https://') !== 0) {
-			$url = "{$this->host}{$url}.{$this->format}";
-		}
+		
 		switch ($method) {
 			case 'GET':
 				$url = $url . '?' . http_build_query($parameters);
@@ -35,7 +78,7 @@ class HttpRequest{
 			default:
 				$headers = array();
 				if (!$multi && (is_array($parameters) || is_object($parameters)) ) {
-					$body = http_build_query($parameters);
+					$body = json_encode($parameters);
 				} else {
 					$body = self::build_http_query_multi($parameters);
 					$headers[] = "Content-Type: multipart/form-data; boundary=" . self::$boundary;
@@ -49,7 +92,7 @@ class HttpRequest{
 		
 		$ci = curl_init();
 		curl_setopt($ci, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
-		curl_setopt($ci, CURLOPT_USERAGENT, $this->useragent);
+		//curl_setopt($ci, CURLOPT_USERAGENT, $this->useragent);
 		curl_setopt($ci, CURLOPT_CONNECTTIMEOUT, $this->connecttimeout);
 		curl_setopt($ci, CURLOPT_TIMEOUT, $this->timeout);
 		curl_setopt($ci, CURLOPT_RETURNTRANSFER, TRUE);

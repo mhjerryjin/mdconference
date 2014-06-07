@@ -2,9 +2,8 @@ var global={};
 global.request=function (url,param,callback) {
 	jQuery.ajax({
         url: url,
+        type:"POST",
         data: param,
-        dataType: 'jsonp',
-        jsonp: 'cb',
         success: function (data) { 
         	callback&&callback(data);
         }

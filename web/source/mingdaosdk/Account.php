@@ -13,7 +13,7 @@ class Account{
 		$params['access_token']=$this->oauth->access_token;
 		$params['format']='json';
 		$response = $this->oauth->oAuthRequest($this->oauth->host.'passport/detail', 'GET', $params);
-		return $response;
+		return json_decode($response, true);
 	}
 }
 

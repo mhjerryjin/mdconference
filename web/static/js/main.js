@@ -1,17 +1,17 @@
 var main={};
 
 main.getUser=function(userid) {
-	global.request(config.yuntongxun.geturl('getuser'),{id:userid,appid:config.appid},function(data){
+	global.request(config.yuntongxun.geturl('getUser'),{id:userid},function(data){
 		console.dir(data);
 	})
 }
-main.createConf=function(argument){
-	global.request(config.yuntongxun.geturl('createConf'),{},function(data){
+main.createConf=function(userid,pwd){
+	global.request(config.yuntongxun.geturl('createConf'),{id:userid,pwd:pwd?pwd:''},function(data){
 
 	})
 }
-main.stopConf=function(argument){
-	global.request(config.yuntongxun.geturl('stopConf'),{},function(data){
+main.stopConf=function(id){
+	global.request(config.yuntongxun.geturl('stopConf'),{id:id},function(data){
 
 	})
 }
