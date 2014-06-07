@@ -21,7 +21,7 @@ main.createConf=function(name,pwd,time){
 		time:time||'',
 	},function(data){
 		if(data.id){
-			location.href="metting.php?id="+data.id;
+			location.href="selectuser.php?id="+data.id;
 		}else{
 			alert("创建会议失败，刷新页面试试");
 		}

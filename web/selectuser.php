@@ -1,4 +1,6 @@
 <?php
+    include_once('./source/core.php');
+
 
 ?>
 
@@ -6,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="css/style.min.css" rel="stylesheet" />
+<link href="static/css/style.min.css" rel="stylesheet" />
 <title>语音会议</title>
 </head>
 <body>
@@ -15,17 +17,17 @@
             <div class="Hk_user">
                 <div class="Hk_topic">
                     <a href="#">
-                        <img src="images/topic.png" />
+                        <img id="avatar" src="images/topic.png" />
                     </a>
                 </div>
                 <div class="Hk_Name">
-                    <div class="Hk_names">路扬</div>
-                    <div class="Hk_title">WEB前端开发工程师</div>
+                    <div id="username" class="Hk_names"></div>
+                    <div id="userjob" class="Hk_title"></div>
                 </div>
             </div>
             <div class="Hk_company">
                 <a id="coms">
-                    <span class="coms">梅花与明道</span>
+                    <span class="coms" id="companyname"></span>
                     <span class="slide"></span>
                 </a>
                 <div class="slideMenu" id="slideMenu">
@@ -391,9 +393,25 @@
     </div>
 
     
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/jquery.mousewheel.js"></script>
-<script src="js/perfect-scrollbar.min.js"></script>
-<script src="js/Script.js"></script>
+<script src="static/js/jquery-1.11.1.min.js"></script>
+<script src="static/js/jquery.mousewheel.js"></script>
+<script src="static/js/perfect-scrollbar.min.js"></script>
+<script src="static/js/Script.js"></script>
+<script src="static/js/selectuser.js"></script>
+<script type="text/javascript">
+    jQuery.ajax({
+        url:"ajax/user.php?op=getcurrent",
+        dataType:'JSON',
+        async:false,
+        success:function(data){
+            var current=data.user;
+            $("#avatar").attr("src",current.avatar100);
+            $("#username").text(current.name);
+            $("#userjob").text(current.job);
+            $("#companyname").text(current.company);
+        }
+    });
+    new $selectuser($("#user_list")[0]);
+</script>
 </body>
 </html>

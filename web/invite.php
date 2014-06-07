@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    include_once('./source/core.php');
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="css/style.min.css" rel="stylesheet" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<link href="static/css/style.min.css" rel="stylesheet" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
 <title>语音会议</title>
 </head>
 <body>
@@ -145,10 +149,22 @@
         </div>
         <div class="clear"></div>
     </div>
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js"></script>
-<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="js/Script.js"></script>
+<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/Script.js"></script>
+<script type="text/javascript">
+    jQuery.ajax({
+        url:"ajax/user.php?op=getcurrent",
+        dataType:'JSON',
+        async:false,
+        success:function(data){
+            var current=data.user;
+            $("img.avatar").attr("src",current.avatar100);
+            $("div.username").text(current.name);
+            $("div.usercompanys").text(current.company);
+        }
+    });
+</script>
+
 </body>
 </html>

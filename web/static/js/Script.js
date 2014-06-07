@@ -57,9 +57,11 @@ $("#order").click(function () {
     $("#begin").removeClass("selBtn");
     $("#orderDate").show();
 })
-$('.form_datetime').datetimepicker({
-    language:  'zh-CN',
-    weekStart: 1,
-    todayBtn: 1,
-    pickerPosition: "bottom-left",
-});
+if(typeof($.datetimepicker)!= 'undefined'){
+    $('.form_datetime').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        pickerPosition: "bottom-left",
+    });
+}

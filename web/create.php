@@ -38,7 +38,7 @@
             <a id="order" class="meetBtn">预约会议</a>
             <div class="approves" id="orderDate">
                 <div class="input-group date form_datetime" data-link-field="dtp_input1">
-                    <input class="form-control" type="text" value="" placeholder="请设定会议开始时间" />
+                    <input class="form-control" id="time" type="text" value="" placeholder="请设定会议开始时间" />
                     <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                 </div>
                 <input type="hidden" id="dtp_input1" value="" />
@@ -91,6 +91,10 @@
         var password=$("#password").val();
         var check_password=$("#check_password").val();
         var checkbox=$("#chebox").prop('checked');
+        var time=$("#time").val();
+        if($("#begin").hasClass("selBtn")){
+            time='';
+        }
         if(checkbox&&check_password!=password){
             alert("两次密码输入不一致");
         }else if(!checkbox){
