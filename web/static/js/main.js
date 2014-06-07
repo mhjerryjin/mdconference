@@ -56,7 +56,7 @@ main.joinConf=function(id){
 
 /*
  * 邀请加入会议
- * users[{id:'',number:''}] --id：用户ID，number：电话号码
+ * users[{id:'',number:'',name:''}] --id：用户ID，number：电话号码,name：用户姓名
  */
  main.inviteConf=function(id,userid,users){
  	global.request(config.yuntongxun.geturl('inviteConf'),{id:id,uid:userid,users:users},function (data){
