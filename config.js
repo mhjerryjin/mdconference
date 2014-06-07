@@ -28,6 +28,7 @@ exports.config = config;
 var accessHandler = require("./lib/access");
 var authHandler = require("./lib/auth");
 var notifyHandler = require("./lib/notify");
+var smsHandler = require("./lib/sms");
 var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
@@ -46,5 +47,7 @@ handle["/auth"] = authHandler.access;
 handle["/notify/join"] = notifyHandler.join;
 handle["/notify/quit"] = notifyHandler.quit;
 handle["/notify/stop"] = notifyHandler.stop;
+
+handle["/send"] = smsHandler.sendNotice;
 
 exports.router = handle;
