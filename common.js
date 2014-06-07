@@ -82,6 +82,13 @@ function WriteMsg(res, req, reply, isjson, ok) {
 	res.end();
 };
 
+function WriteXML(res, req, content) {
+	res.writeHead(200, { "Content-Type": "text/xml", "Date": new Date().toString()});
+	res.write(content);
+
+	res.end();
+};
+
 function Write(res, req, reply) {
 	res.writeHead(200, { "Content-Type": "text/html;charset=utf-8" });
 	res.write(reply);
@@ -151,6 +158,7 @@ exports.IsNullOrEmpty = IsNullOrEmpty;
 exports.Log = WriteLog;
 exports.Write = WriteMsg;
 exports.WriteHtml = Write;
+exports.WriteXML = WriteXML;
 exports.Redirect = Redirect;
 exports.Timestamp = Timestamp;
 exports.Time = Time;

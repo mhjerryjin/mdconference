@@ -47,11 +47,12 @@
 exports.config = config;
 
 var accessHandler = require("./lib/access");
+var authHandler = require("./lib/auth");
 var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
 handle["/createConf"] = accessHandler.createConf;
 handle["/stopConf"] = accessHandler.stopConf;
-
+handle["/auth"] = authHandler.access;
 
 exports.router = handle;
