@@ -45,5 +45,6 @@ handle["/auth"] = authHandler.access;
 
 handle["/notify/join"] = notifyHandler.join;
 handle["/notify/quit"] = notifyHandler.quit;
+handle["/notify/stop"] = notifyHandler.stop;
 
 exports.router = handle;
