@@ -51,5 +51,7 @@ var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
 handle["/createConf"] = accessHandler.createConf;
+handle["/stopConf"] = accessHandler.stopConf;
+
 
 exports.router = handle;

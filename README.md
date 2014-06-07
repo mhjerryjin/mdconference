@@ -28,6 +28,11 @@ npm install
     4. 返回内容 json，{status:"状态码",id:"会议编号",vid:"voip会议编号"}
 
 * 停止会议
+    1. 请求方式 post
+    2. 请求路径 /stopConf
+    3. POST内容 json，{id:"云通讯会议编号"}
+    4. 返回内容 json，{status:"状态码"}
+
 
 * 会议状态查询
 
