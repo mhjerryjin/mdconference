@@ -4,5 +4,6 @@
 	define( "CALLBACK_URL" , 'http://localhost:8888/callback.php' );
 
 	$_config = array();
-	$_config['yuntongxun']=array('url'=>'http://172.16.21.69/');
+	$_config['yuntongxun']=array('url'=>'http://172.16.21.69/','appid'=>'1234567890');
+
 ?>

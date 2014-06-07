@@ -3,8 +3,8 @@ var main={};
 /*
  * 获取用户子账号和token
  */
-main.getUser=function(userid) {
-	global.request(config.yuntongxun.geturl('getuser'),{id:userid},function(data){
+main.getUser=function() {
+	global.request(config.yuntongxun.geturl('getuser'),{id:main.current.id},function(data){
 		console.dir(data);
 	});
 }
@@ -22,15 +22,19 @@ main.getUser=function(userid) {
 /*
  * 创建会议
  */
-main.createConf=function(userid,name,pwd,time){
+main.createConf=function(name,pwd,time){
 	global.request(config.yuntongxun.geturl('createConf'),
 	{
-		id:userid,
+		id:main.current.id,
 		name:name||'',
 		pwd:pwd||'',
 		time:time||'',
 	},function(data){
-
+		if(data.id){
+			location.href="metting.php?id="+data.id;
+		}else{
+			alert("创建会议失败，刷新页面试试");
+		}
 	});
 }
 
@@ -38,8 +42,8 @@ main.createConf=function(userid,name,pwd,time){
  * 停止会议
  * id:云通讯会议编号
  */
-main.stopConf=function(id){
-	global.request(config.yuntongxun.geturl('stopConf'),{id:id},function(data){
+main.stopConf=function(){
+	global.request(config.yuntongxun.geturl('stopConf'),{id:main.metting.id},function(data){
 
 	});
 }
@@ -48,9 +52,11 @@ main.stopConf=function(id){
  * 加入会议
  * id:云通讯会议编号
  */
-main.joinConf=function(id){
-	global.request(config.yuntongxun.geturl('joinConf'),{id:id},function (data){
-
+main.joinConf=function(){
+	global.request(config.yuntongxun.geturl('joinConf'),{id:main.metting.id},function (data){
+		if(data.status){
+			alert("加入成功");
+		}
 	});
 }
 
@@ -58,8 +64,8 @@ main.joinConf=function(id){
  * 邀请加入会议
  * users[{id:'',number:'',name:''}] --id：用户ID，number：电话号码,name：用户姓名
  */
- main.inviteConf=function(id,userid,users){
- 	global.request(config.yuntongxun.geturl('inviteConf'),{id:id,uid:userid,users:users},function (data){
+ main.inviteConf=function(users){
+ 	global.request(config.yuntongxun.geturl('inviteConf'),{id:main.metting.id,uid:main.current.id,users:users},function (data){
 
 	});
  }
