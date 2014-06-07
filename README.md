@@ -24,7 +24,7 @@ npm install
     1. 请求方式 post
     2. 请求路径 /getConf
     3. POST内容 json，{id:"云通讯会议编号"}
-    4. 返回内容 json，{status:"状态码",id:"会议编号",vid:"voip会议编号", name:"会议名称", time:"会议开始时间", pwd:"会议密码"}
+    4. 返回内容 json，{status:"状态码",id:"会议编号",uid:"创建用户编号",appid:"不同应用编号",vid:"voip会议编号", name:"会议名称", time:"会议开始时间", pwd:"会议密码"}
 
 * 获取会议当前状态，并且返回当前所有用户
     1. 请求方式 post
