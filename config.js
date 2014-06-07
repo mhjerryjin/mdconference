@@ -8,7 +8,8 @@
 		storage: {
 			userPrefix: 'md.ytx.u.', //用户信息
 			userExpiretime : 720, //分钟，超时时间
-			userConfPrefix: 'md.ytx.c.' //会议信息
+			confKey: 'md.ytx.conf.key', //会议信息
+			userConfPrefix: 'md.ytx.uc.' //会议信息
 		}
 	},
 	mdapi: {
@@ -38,8 +39,7 @@
 		appId: 'aaf98fda45df8fde0145f38eedc21164',
 		resturi: 'https://app.cloopen.com:8883',
 		baseUrl: 'https://sandboxapp.cloopen.com:8883',
-		softVersion: '2013-12-26',
-		log: ''
+		softVersion: '2013-12-26'
 	},
 	filepath: 'd:/weixin/',
 	logpath: 'd:/log.txt'
@@ -51,7 +51,9 @@ var authHandler = require("./lib/auth");
 var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
+handle["/getConf"] = accessHandler.getConf;
 handle["/createConf"] = accessHandler.createConf;
+handle["/joinConf"] = accessHandler.joinConf;
 handle["/stopConf"] = accessHandler.stopConf;
 handle["/auth"] = authHandler.access;
 
