@@ -10,16 +10,6 @@ main.getUser=function() {
 }
 
 /*
- * 获取会议信息
- */
- main.getConf=function(id){
- 	global.request(config.yuntongxun.geturl('getConf'),{id:id},function(data){
-
-	});
- }
-
-
-/*
  * 创建会议
  */
 main.createConf=function(name,pwd,time){
@@ -39,13 +29,40 @@ main.createConf=function(name,pwd,time){
 }
 
 /*
+ * 对会议执行操作
+ */
+main.conf=function($controller,callback){
+	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id},function(data){
+		callback&&callback(data);
+	});
+}
+
+/*
+ * 获取会议信息
+ */
+ main.getConf=function(){
+ 	main.conf('getConf',function(data){
+ 		
+ 	})
+ }
+
+/*
+ * 获取所有参会成员
+ */
+main.getConfUsers=function(){
+	main.conf('getConfUsers',function(data){
+ 		
+ 	})
+}
+
+/*
  * 停止会议
  * id:云通讯会议编号
  */
 main.stopConf=function(){
-	global.request(config.yuntongxun.geturl('stopConf'),{id:main.metting.id},function(data){
-
-	});
+	main.conf('stopConf',function(data){
+ 		
+ 	})
 }
 
 /*
@@ -70,3 +87,41 @@ main.joinConf=function(){
 	});
  }
 
+/*
+ * 批量操作封装
+ * users[{callid:''}] --callid：参会用户列表的callid
+ */
+main.batch=function($controller,users,callback){
+	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id,uid:main.current.id,users:users},function (data){
+		callback&&callback(data);
+	});
+}
+/*
+ * 批量踢人
+ * users[{callid:''}] --callid：参会用户列表的callid
+ */
+main.quitConf=function(users){
+	main.batch('quitConf',users,function(data){
+
+	})
+}
+
+/*
+ * 批量静音
+ * users[{callid:''}] --callid：参会用户列表的callid
+ */
+main.muteConf=function(users){
+	main.batch('muteConf',users,function(data){
+
+	})
+}
+
+/*
+ * 批量静音
+ * users[{callid:''}] --callid：参会用户列表的callid
+ */
+main.unmuteConf=function(users){
+	main.batch('unmuteConf',users,function(data){
+
+	})
+}

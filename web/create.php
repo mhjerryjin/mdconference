@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="static/css/style.min.css" rel="stylesheet" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 <title>语音会议</title>
 </head>
 <body>
@@ -34,7 +36,13 @@
         <div class="Hk_meeting">
             <a id="begin" class="meetBtn selBtn">实时开始会议</a>
             <a id="order" class="meetBtn">预约会议</a>
-            <div class="approves" id="orderDate"></div>
+            <div class="approves" id="orderDate">
+                <div class="input-group date form_datetime" data-link-field="dtp_input1">
+                    <input class="form-control" type="text" value="" placeholder="请设定会议开始时间" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+                <input type="hidden" id="dtp_input1" value="" />
+            </div>
             <div class="clear"></div>
         </div>
          <div class="Hk_setPwd">
@@ -65,6 +73,9 @@
 <script type="text/javascript" src="static/js/global.js"></script>
 <script type="text/javascript" src="static/js/config.js"></script>
 <script type="text/javascript" src="static/js/main.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script type="text/javascript" src="static/js/Script.js"></script>
 <script type="text/javascript">
     jQuery.ajax({

@@ -1,6 +1,6 @@
 ﻿$("#coms").click(function () {
     $("#slideMenu").slideToggle(300)
-});
+})
 $("#invite1").click(function () {
     $("#invite1").addClass("local");
     $("#invite2").removeClass("local");
@@ -57,3 +57,9 @@ $("#order").click(function () {
     $("#begin").removeClass("selBtn");
     $("#orderDate").show();
 })
+$('.form_datetime').datetimepicker({
+    language:  'zh-CN',
+    weekStart: 1,
+    todayBtn: 1,
+    pickerPosition: "bottom-left",
+});
