@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>明道会议</title>
 <script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="static/js/JSON.js"></script>
 <script type="text/javascript" src="static/js/global.js"></script>
 <script type="text/javascript" src="static/js/config.js"></script>
 <script type="text/javascript" src="static/js/main.js"></script>
@@ -20,7 +21,7 @@
 		}
 	});
 
-	main.stopConf('60002468');
+	main.getUser(main.current.id);
 </script>
 </head>
 

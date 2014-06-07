@@ -3,7 +3,8 @@ global.request=function (url,param,callback) {
 	jQuery.ajax({
         url: url,
         type:"POST",
-        data: param,
+        processData:false,
+        data: JSON.stringify(param),
         success: function (data) { 
         	callback&&callback(data);
         }

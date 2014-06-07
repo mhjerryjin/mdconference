@@ -27,21 +27,38 @@ exit();
 
 function getUser(){
 	$http=new HttpRequest();
-	$param = array('id'=>$_POST['id'],'appid'=>APP_ID);
+	// 接收参数
+	$str = file_get_contents("php://input");
+	// 转为json
+	$param = json_decode($str);
+
+	$param->appid=APP_ID;
+
 	$response=$http->post(geturl().'getuser',$param);
 	return json_encode($response);
 }
 
 function createConf(){
 	$http=new HttpRequest();
-	$param = array('id' => $_POST['id'],'appid'=>APP_ID,'pwd'=>$_POST['pwd'] );
+	
+	// 接收参数
+	$str = file_get_contents("php://input");
+	// 转为json
+	$param = json_decode($str);
+	
+	$param->appid=APP_ID;
+
 	$response=$http->post(geturl().'createConf',$param);
 	return json_encode($response);
 }
 
 function stopConf(){
 	$http=new HttpRequest();
-	$param = array('id' => $_POST['id']);
+	// 接收参数
+	$str = file_get_contents("php://input");
+	// 转为json
+	$param = json_decode($str);
+	
 	$response=$http->post(geturl().'stopConf',$param);
 	return json_encode($response);
 }
