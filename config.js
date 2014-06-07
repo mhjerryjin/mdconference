@@ -31,10 +31,13 @@ var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
 handle["/getConf"] = accessHandler.getConf;
+handle["/getConfUsers"] = accessHandler.getConfUsers;
 handle["/createConf"] = accessHandler.createConf;
 handle["/joinConf"] = accessHandler.joinConf;
 handle["/inviteConf"] = accessHandler.inviteConf;
+handle["/quiteConf"] = accessHandler.quiteConf;
 handle["/stopConf"] = accessHandler.stopConf;
+
 handle["/auth"] = authHandler.access;
 
 exports.router = handle;
