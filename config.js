@@ -3,11 +3,12 @@
 		port: 80
 	},
 	redis: {
-		host: '172.16.23.103',
+		host: '127.0.0.1',
 		port: 6379,
 		storage: {
-			userPrefix: 'md.ytx.',
-			userExpiretime : 720 //分钟，超时时间
+			userPrefix: 'md.ytx.u.', //用户信息
+			userExpiretime : 720, //分钟，超时时间
+			userConfPrefix: 'md.ytx.c.' //会议信息
 		}
 	},
 	mdapi: {
