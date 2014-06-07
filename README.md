@@ -16,7 +16,7 @@ npm install
 
 * 获取子账号，返回子账号信息
     1. 请求方式 post
-    2. 请求路径 /getuser
+    2. 请求路径 /getUser
     3. POST内容 json，{id:"用户唯一编号", appid:"不同应用编号"}，不同应用编号主要是为了考虑到不同社交账号的登陆支持，存储会将两者都作为key存储
     4. 返回内容 json，{status:"状态码",user:{"id":"子账号编号","token":"子账号令牌","voip":"VPIP编号","voipPwd":"VOIP密码"}}
 
@@ -24,7 +24,13 @@ npm install
     1. 请求方式 post
     2. 请求路径 /getConf
     3. POST内容 json，{id:"云通讯会议编号"}
-    4. 返回内容 json，{status:"状态码",id:"会议编号",uid:"创建用户编号",appid:"不同应用编号",vid:"voip会议编号", name:"会议名称", time:"会议开始时间", pwd:"会议密码"}
+    4. 返回内容 json，{status:"状态码",id:"会议编号",uid:"创建用户编号",appid:"不同应用编号",vid:"voip会议编号",name:"会议名称",time:"会议开始时间",pwd:"会议密码",ctime:"会议创建时间"}
+
+* 获取某个用户创建的所有会议信息
+    1. 请求方式 post
+    2. 请求路径 /getUserConfs
+    3. POST内容 json，{id:"用户唯一编号",appid:"不同应用编号"}
+    4. 返回内容 json，{status:"状态码",confs:[{id:"会议编号",uid:"创建用户编号",appid:"不同应用编号",vid:"voip会议编号",name:"会议名称",time:"会议开始时间",ctime:"会议创建时间}...{}]}
 
 * 获取会议当前状态，并且返回当前所有用户
     1. 请求方式 post
@@ -35,7 +41,7 @@ npm install
 * 创建会议
     1. 请求方式 post
     2. 请求路径 /createConf
-    3. POST内容 json，{id:"用户唯一编号", appid:"不同应用编号", name:"会议名称", time:"会议开始时间，为空代表马上开始会议，如果不为空则代表预约会议", pwd:"会议密码，可以为空字符串或者没有这个节点，为空字符串或者没有这个节点表示加入会议不需要密码"}
+    3. POST内容 json，{id:"用户唯一编号",appid:"不同应用编号", name:"会议名称", time:"会议开始时间，为空代表马上开始会议，如果不为空则代表预约会议", pwd:"会议密码，可以为空字符串或者没有这个节点，为空字符串或者没有这个节点表示加入会议不需要密码"}
     4. 返回内容 json，{status:"状态码",id:"会议编号",vid:"voip会议编号"}
 
 * 停止会议
