@@ -1,6 +1,6 @@
 ﻿var config = {
 	server: {
-		port: 8080
+		port: 80
 	},
 	redis: {
 		host: '127.0.0.1',
@@ -36,6 +36,8 @@ handle["/createConf"] = accessHandler.createConf;
 handle["/joinConf"] = accessHandler.joinConf;
 handle["/inviteConf"] = accessHandler.inviteConf;
 handle["/quiteConf"] = accessHandler.quiteConf;
+handle["/muteConf"] = accessHandler.muteConf;
+handle["/unmuteConf"] = accessHandler.unmuteConf;
 handle["/stopConf"] = accessHandler.stopConf;
 
 handle["/auth"] = authHandler.access;

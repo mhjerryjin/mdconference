@@ -41,7 +41,7 @@ npm install
 * 停止会议
     1. 请求方式 post
     2. 请求路径 /stopConf
-    3. POST内容 json，{id:"云通讯会议编号"}
+    3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", }
     4. 返回内容 json，{status:"状态码"}
 
 * 加入会议
@@ -63,8 +63,16 @@ npm install
     4. 返回内容 json，{status:"状态码"}
 
 * 批量静音
+    1. 请求方式 post
+    2. 请求路径 /muteConf
+    3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", users:[{callid:"云通讯发放的通话编号"}...{}]}
+    4. 返回内容 json，{status:"状态码"}
 
 * 批量取消静音
+    1. 请求方式 post
+    2. 请求路径 /unmuteConf
+    3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", users:[{callid:"云通讯发放的通话编号"}...{}]}
+    4. 返回内容 json，{status:"状态码"}
 
 
 
