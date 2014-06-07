@@ -20,6 +20,6 @@ if ($token) {
 	session_start();
 	$_SESSION['mdtoken'] = $token['access_token'];
 
-	redirect('main.php',true);
+	redirect('index.php',true);
 }
 ?>

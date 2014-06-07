@@ -1,6 +1,6 @@
 <?php
 @header('Content-type: aplication/json;charset=UTF-8');
-include_once('../source/core.php');
+include_once('./ajaxbase.php');
 
 $op=$_GET['op'];
 $result='';
@@ -25,9 +25,4 @@ function getcurrentuser(){
 	$account=new Account($oauth);
 	$baseinfo=$account->get_user_baseinfo();
 	return json_encode($baseinfo);
-}
-function geterror(){
-	$error=array();
-	$error['code']=10001;
-	return json_encode($error);
 }

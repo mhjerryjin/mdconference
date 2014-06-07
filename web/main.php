@@ -1,5 +1,15 @@
 <?php
 	include_once('./source/core.php');
+	/*
+		include_once('./source/mingdaosdk/AccessToken.php');
+		include_once('./source/mingdaosdk/Account.php');
+		$oauth=new AccessToken(null,null,$_SESSION['mdtoken']);
+		$account=new Account($oauth);
+		$baseinfo=$account->get_user_all();
+
+		print_r($baseinfo);
+	*/
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,7 +31,7 @@
 		}
 	});
 
-	main.getUser(main.current.id);
+	main.getConf('60002559');
 </script>
 </head>
 

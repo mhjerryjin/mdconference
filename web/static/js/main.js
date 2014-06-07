@@ -4,16 +4,32 @@ var main={};
  * 获取用户子账号和token
  */
 main.getUser=function(userid) {
-	global.request(config.yuntongxun.geturl('getUser'),{id:userid},function(data){
+	global.request(config.yuntongxun.geturl('getuser'),{id:userid},function(data){
 		console.dir(data);
 	});
 }
 
 /*
+ * 获取会议信息
+ */
+ main.getConf=function(id){
+ 	global.request(config.yuntongxun.geturl('getConf'),{id:id},function(data){
+
+	});
+ }
+
+
+/*
  * 创建会议
  */
-main.createConf=function(userid,pwd){
-	global.request(config.yuntongxun.geturl('createConf'),{id:userid,pwd:pwd?pwd:''},function(data){
+main.createConf=function(userid,name,pwd,time){
+	global.request(config.yuntongxun.geturl('createConf'),
+	{
+		id:userid,
+		name:name||'',
+		pwd:pwd||'',
+		time:time||'',
+	},function(data){
 
 	});
 }
@@ -40,9 +56,10 @@ main.joinConf=function(id){
 
 /*
  * 邀请加入会议
+ * users[{id:'',number:''}] --id：用户ID，number：电话号码
  */
- main.inviteConf=function(){
- 	global.request(config.yuntongxun.geturl('inviteConf'),{id:id},function (data){
+ main.inviteConf=function(id,userid,users){
+ 	global.request(config.yuntongxun.geturl('inviteConf'),{id:id,uid:userid,users:users},function (data){
 
 	});
  }
