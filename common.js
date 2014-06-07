@@ -65,19 +65,35 @@ function ArrayContains(arr, value) {
 	return false;
 };
 
-function WriteMsg(res, req, reply, isjson, ok) {
-	res.writeHead(200, { "Content-Type": "application/json" });
-	if (ok) {
-		if (IsNullOrEmpty(reply))
-			res.write(JSON.stringify({ status: "1" }));
-		else if (isjson) {
-			res.write(JSON.stringify(reply));
+function WriteMsg(res, req, reply, isjson, ok, callback) {
+	if (IsNullOrEmpty(callback)) {
+		res.writeHead(200, { "Content-Type": "application/json" });
+		if (ok) {
+			if (IsNullOrEmpty(reply))
+				res.write(JSON.stringify({ status: "1" }));
+			else if (isjson) {
+				res.write(JSON.stringify(reply));
+			}
+			else
+				res.write(reply);
 		}
 		else
-			res.write(reply);
+			res.write(JSON.stringify({ status: "0" }));
 	}
-	else
-		res.write(JSON.stringify({ status: "0" }));
+	else {
+		res.writeHead(200, { "Content-Type": "text/json" });
+		if (ok) {
+			if (IsNullOrEmpty(reply))
+				res.write(callback + "(" + JSON.stringify({ status: "1" }) + ")");
+			else if (isjson) {
+				res.write(callback + "(" + JSON.stringify(reply) + ")");
+			}
+			else
+				res.write(reply);
+		}
+		else
+			res.write(callback + "(" + JSON.stringify({ status: "0" }) + ")");
+	}
 
 	res.end();
 };

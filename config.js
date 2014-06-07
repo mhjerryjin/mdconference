@@ -51,7 +51,9 @@ var authHandler = require("./lib/auth");
 var handle = {};
 handle["/"] = accessHandler.homepage;
 handle["/getuser"] = accessHandler.getAccount;
+handle["/getConf"] = accessHandler.getConf;
 handle["/createConf"] = accessHandler.createConf;
+handle["/joinConf"] = accessHandler.joinConf;
 handle["/stopConf"] = accessHandler.stopConf;
 handle["/auth"] = authHandler.access;
 
