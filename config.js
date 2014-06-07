@@ -1,6 +1,6 @@
 ﻿var config = {
 	server: {
-		port: 80
+		port: 8080
 	},
 	redis: {
 		host: '127.0.0.1',
