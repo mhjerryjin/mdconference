@@ -46,7 +46,6 @@ foreach ($joins as $join){
 	}
 	$mettingusers[$join->state][]=$join;
 }
-
 $joinnum=count($mettingusers[1]);
 $nojoinnum=count($mettingusers[0]);
 ?>

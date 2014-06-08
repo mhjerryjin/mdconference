@@ -1,6 +1,6 @@
 <?php
-include_once('/source/HttpRequest.php');
-include_once('/config/config.php');
+include_once('./source/HttpRequest.php');
+include_once('./config/config.php');
 
 define("APP_ID", $_config['yuntongxun']['appid']);
 define("YUNTONGXUN_URL", $_config['yuntongxun']['url']);
