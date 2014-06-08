@@ -10,6 +10,12 @@ $("#slideMenu").on("mouseleave", function () {
         $("#slideMenu").slideUp(300)
     },1000)
 })
+$("#Hk_camUser").on("mouseleave", function () {
+    var timer = 0;
+    timer = setTimeout(function () {
+        $("#Hk_camUser").slideUp(300)
+    }, 1000)
+})
 $("#invite1").click(function () {
     $("#invite1").addClass("local");
     $("#invite2").removeClass("local");
@@ -77,21 +83,20 @@ $("#userCheck").click(function () {
     $("#Hk_camUser").slideToggle(200);
 })
 $("#camera").click(function () {
-    $("#camera").toggleClass("selLocal");
     $("#camera span").toggleClass("camBtn2","camBtn")
     $("#camera_con").toggle();
     $("#message_con").toggle();
 })
 $("#PC").click(function () {
-    $("#PC").toggleClass("selLocal");
     $("#PC span").toggleClass("PC2", "PC")
+    $("#desktop").toggle();
+    $("#message_con").toggle();
+    $("#camera_con").hide();
 })
 $("#lock").click(function () {
-    $("#lock").toggleClass("selLocal");
     $("#lock span").toggleClass("lock2", "lock")
 })
 $("#luyin").click(function () {
-    $("#luyin").toggleClass("selLocal");
     $("#luyin span.audio").toggleClass("audio2", "audio")
 })
 $("#joinBtn").click(function () {
@@ -106,7 +111,11 @@ $("#unJoinBtn").click(function () {
     $("#join_con").hide();
     $("#unJoin_con").show();
 })
-if(typeof($.fn.datetimepicker)!= 'undefined'){
+$("#Hk_reRight").click(function () {
+    $("#slideMenu").slideToggle(200);
+})
+
+if (typeof ($.fn.datetimepicker) != 'undefined') {
     $('.form_datetime').datetimepicker({
         language:  'zh-CN',
         weekStart: 1,
@@ -114,3 +123,17 @@ if(typeof($.fn.datetimepicker)!= 'undefined'){
         pickerPosition: "bottom-left",
     });
 }
+
+$(document).ready(function () {
+    var heights = $(document).height();
+    var heis = heights - 770;
+    $(".bottomArea").css("height", heis)
+})
+$(window).resize(function(){
+    var heights = $(document).height();
+    var heis = heights - 770;
+    $(".bottomArea").css("height", heis)
+    if (heights < 770) {
+        $(".bottomArea").css("height", "0")
+    }
+})
