@@ -1,21 +1,33 @@
 
+body{
+    background:#dedede;
+}
 .top{
-	height:443px;
-	background: url(../images/loginBg.png) no-repeat center center;
+    width:100%;
+	height:352px;
+    margin:0 auto;
+    top:0;
+    position:absolute;
+	background: url(../images/loginBg.png) left top repeat;
 }
 .logo{
-	display:inline-block;
-	width:129px;
-	height:54px;
+	width:127px;
+	height:51px;
+    margin:66px auto 0 auto;
 	background: url(../images/logo.png) no-repeat center center;
-	margin-top:80px;
+}
+.iphone6{
+	width:333px;
+	height:39px;
+    margin:75px auto 0 auto;
+	background: url(../images/iphone6.png) no-repeat center center;
 }
 .login{
 	display: inline-block;
 	background: url(../images/meetBtn-normal.png) no-repeat center center;
 	width:247px;
 	height:97px;
-	margin-top:120px;
+	margin-top:60px;
 	cursor: pointer;
 }
 .login:hover{
@@ -26,33 +38,53 @@
 }
 .mdlogin{
 	
-	background: url(../images/mdIcon.png) no-repeat 10px center;
-	margin-top:50px;
+	background: url(../images/mdIcon.png) no-repeat 15px center;
+	margin-top:470px;
+
 	
 }
-.mdlogin font{border-left:1px solid #fff;display:inline-block;padding-left:10px;cursor: pointer;}
-.conFbutton{background: url(../images/confBtn.png) no-repeat 10px center;}
-.logoutbtn{background: url(../images/logoutBtn.png) no-repeat 10px center;background-color: #F6F6F6!important;}
+.mdlogin font{ height:30px; line-height:30px ;display:inline-block;padding-left:10px;cursor: pointer; margin-left:5px; background:url(../images/gang.png) left center no-repeat}
+.conFbutton{background: url(../images/confBtn.png) no-repeat 15px center;}
+.logoutbtn{background: url(../images/logoutBtn.png) no-repeat 15px center;background-color: #F6F6F6!important;}
 .logoutbtn:hover{background-color: #CCCCCC!important;}
 .button{
 	display: inline-block;
-	background-color:#c4e5ff;
+	background-color:#e0f0ff;
 	color:#666;
-	font-size:14px;
+	font-size:12px;
 	font-weight: 500;
-	padding:10px 10px 10px 42px;
-	-moz-border-radius: 7px;      /* Gecko browsers */
-    -webkit-border-radius: 7px;   /* Webkit browsers */
-    border-radius:7px;            /* W3C syntax */
+	padding:15px 15px 15px 44px;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
     cursor: pointer;
 }
 .button:hover{
-	background-color: #86caff;
+	background-color: #cfe9ff;
 	text-decoration: none;
 }
-
+.button2{
+    padding:10px 15px 10px 44px;
+    background-color:#ccc;
+}
+.button2:hover{
+    background-color:#bbb;
+}
 .userinfo{
-	padding: 50px 200px;
+    width:260px;
+    height:160px;
+    margin:440px auto 0 auto;
+
+}
+.topicArea{
+    width:185px;
+    float:none !important;
+    margin:15px auto 46px auto;
+}
+.topicArea2{
+    width:250px;
+    float:none !important;
+    margin:15px auto 0 auto;
 }
 .userinfo .avatar{
 	width:60px;height:60px;
@@ -60,9 +92,14 @@
     -webkit-border-radius: 50px;   /* Webkit browsers */
     border-radius:50px;            /* W3C syntax */
 }
-.userinfo .username{font-size:20px;font-weight: bold;}
+.userinfo .username{font-size:20px;}
 .userinfo .usercompanys{font-size: 12px;color: #999;
 background:url(../images/icon-dropdown.png) no-repeat right center;
 padding-right: 15px;
 cursor: pointer;
+line-height:25px;
+}
+.bottom{
+    width:100%;
+    float:left;
 }
