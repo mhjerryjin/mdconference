@@ -260,6 +260,8 @@ a:link {
   padding: 15px;
   background: #FFF;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .Hk_wrap .Hk_videoWrap .Hk_videoLeft .Hk_camera .Hk_userCheck {
   position: absolute;
