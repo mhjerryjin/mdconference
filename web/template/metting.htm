@@ -1,16 +1,275 @@
 <!--{template common/header}-->
+<style type="text/css">
+#videobg{position:absolute;margin-top:-69px;left:50%;margin-left:-108px;z-index:99999;top:30%;}
+</style>
+	<div id="videobg">
+	    <div id="idvideophone" style="display:block">
+	        <a href="http://www.adobe.com/go/getflashplayer" alt="Get Adobe Flash player">Get Adobe Flash player</a>
+	    </div>
+	</div>
+    <div class="Hk_wrap" style="width:830px;">
+        <div class="Hk_userTop">
+            <div class="Hk_meetInfo">
+                <div class="Hk_meetLocal">当前会议</div>
+                <div class="Hk_meetNames">$metting->name</div>
+            </div>
+            <div class="Hk_company" style="margin-left:20px; width:30px;">
+                <a class="setBtn" id="coms2">个人设置</a>
+                <div class="slideMenu slide2" id="slideMenu">
+                    <a href="#">修改资料</a>
+                    <a href="#">切换到手机</a>
+                    <a href="#">结束会议</a>
+                </div>
+            </div>
+            <div class="Hk_user" style="float:right; border-right:1px solid #ccc; padding-right:20px;">
+                <div class="Hk_topic">
+                    <a href="javascript:;">
+                        <img src="$create['avatar100']" />
+                    </a>
+                </div>
+                <div class="Hk_Name">
+                    <div class="Hk_names" style=" margin:5px 0 -5px 0;vertical-align:bottom;">$create['name']</div>
+                    <div class="Hk_title" style="font-size:12px;">会议创建者</div>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+        
+        <div class="Hk_videoWrap">
+            <div class="Hk_videoLeft">
+                <div class="Hk_camera" id="camera_con" style="display:none">
+                    <img src="static/images/camera.png" />
+                    <div class="Hk_userCheck">
+                        <a class="userCheck" id="userCheck">
+                            <span class="uName">梅花管家</span>
+                            <span class="uJt"></span>
+                        </a>
+                    </div>
+                    <div class="Hk_camUser" id="Hk_camUser">
+                        <a href="#">梅花管家1</a>
+                        <a href="#">梅花管家2</a>
+                        <a href="#">梅花管家3</a>
+                        <a href="#">梅花管家4</a>
+                    </div>
+                </div>
+                <div class="Hk_camera Hk_msg" id="message_con">
+                    
+                </div>
+                <div class="Hk_bottomBtn">
+                    <a id="camera">
+                        <span class="camBtn"></span>
+                    </a>
+                    <a id="PC">
+                        <span class="PC"></span>
+                    </a>
+                    <a id="lock">
+                        <span class="lock"></span>
+                    </a>
+                    <a class="luyin" id="luyin">
+                        <span class="audio"></span>
+                        <span class="timer">已进行时长&nbsp;&nbsp;&nbsp;<font id="time">00:00</font></span>
+                        <span class="status">正在录制</span>
+                    </a>
+                    <a class="mr_0" id="addUser">
+                        <span class="addUser"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="Hk_videoRight" id="mettinguser">
+    			<!--{template block/mettinguser}-->
+			</div>
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/bootstrap-datetimepicker.min.js"></script>
+<script src="static/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/js/Script.js"></script>
+<script src="static/js/swfobject.js"></script>
+<script src="static/js/Cloopen_sandbox.js"></script>
+<!--{if $current['user']['id']==$create['id']}-->
+<script type="text/javascript">
+	var iscreater=true;
+</script>
+<!--{/if}-->
+<script type="text/javascript">
+	
+	$(function(){
+		/*设置为强制登录模式*/
+		Cloopen.forceLogin();
+		
+		/*以voip账号和密码登录的方式初始化*/
+        Cloopen.initByUser('idvideophone'//swf对应的id
+                    ,initCallBack//初始化时自定义fun
+                    ,notifyCallBack//显示通知的自定义fun
+                    ,'$mettingcurrent->voip'//voip子账号
+					,'$mettingcurrent->voipPwd'//voip子账号密码
+        );
+        /*未连接状态*/
+        Cloopen.when_idle(function(){
+            fn_updatelog('未连接...');
+        })
+        
+        /*正在连接服务器注册*/
+        Cloopen.when_connecting(function(){
+            fn_updatelog('正在连接服务器注册...');
+        })
+        
+        /*已经注册登录*/
+        Cloopen.when_connected(function(){
+        	
+            fn_updatelog('通话准备就绪！');
+            if(typeof(iscreater)!='undefined')
+        		main.callAllConf();
+            
+            setTimeout(function(){
+            	Cloopen.invitetel('conf4001014523'+main.metting.id,'');
+            },2000);
+            
+        })
+        
+        /*正在呼出*/
+        Cloopen.when_outbound(function(){
+            fn_updatelog('正在呼出...'); 
+        })
+        
+        /*有呼入*/
+        Cloopen.when_inbound(function(){
+            fn_updatelog('有电话呼入...');
+        })
+        
+        /*通话中*/
+        Cloopen.when_active(function(){
+            fn_updatelog('通话中...');
+            stopCount();
+            timedCount();
+        });
+        
+        $("#join_con").delegate("a.voiceOn","click",function(){
+        	var callid=$(this).parents("li").first().attr("callid");
+        	if(callid&&callid!=''){
+        		main.main.muteConf([{callid:callid}],function(data){
+        			if(data.status){
+        				$(this).removeClass("voiceOn").addClass("voiceOff");
+        			}
+        		});
+        		
+        	}
+        });
+        $("#join_con").delegate("a.voiceOff","click",function(){
+        	var callid=$(this).parents("li").first().attr("callid");
+        	if(callid&&callid!=''){
+        		main.main.unmuteConf([{callid:callid}],function(data){
+        			if(data.status){
+        				$(this).removeClass("voiceOff").addClass("voiceOn");
+        			}
+        		});
+        	}
+        });
+        $("#join_con").delegate("a.closeBtn","click",function(){
+        	var callid=$(this).parents("li").first().attr("callid");
+        	if(callid&&callid!=''){
+        		main.main.quitConf([{callid:callid}],function(data){
+        			$(this).parents("li").first().remove();
+        		});
+        	}
+        });
+        
+        setTimeout(function(){
+        	$("#mettinguser").load("block.php?mod=mettinguser",{id:main.metting.id});
+        },5000);
+	});
+	/*更新日志*/
+	function fn_updatelog(text){
+	   $('#message_con').append('<p>'+text+'</p>');
+	}
 
-	<!--{if $ischeck}-->
-	<script type="text/javascript">
-		$(function(){
-			main.joinConf();	
-		});
-	</script>
-	<!--{else}-->
-	<form action="" method="post">
-		<input type="password" id="password" name="password">
-		<button type="submit">提交密码</button>
-	</form>
-	<!--{/if}-->
+	/*计时器*/
+	var c=0
+	var t  
+	function timedCount()  
+	{  
+//	    hour=parseInt(c/60/60);
+	    minute=parseInt(c/60%60);
+	    second=parseInt(c%60);
+	    if(minute<10){
+	      mStr = '0'+minute;
+	    } else{
+	      mStr =  minute
+	    }
+	    if(second<10){
+	      sStr = '0'+second;
+	    } else{
+	      sStr =  second
+	    }
+	  $("#time").text(mStr+':'+sStr);
+	  c=c+1;  
+	  t=setTimeout("timedCount()",1000);  
+	} 
+	 
+	/*停止计时器*/
+	function stopCount()  
+	{  
+	  clearTimeout(t);
+	  c=0;
+	  $("#time").html('00:00');  
+	}  
+	/*Cloopen显示事件回调通知的自定义函数*/
+	function notifyCallBack(doFun,msg){
+		if (doFun == 'invited') {
+			// 发起呼叫成功事件
+			fn_updatelog('发起呼叫成功事件');
+		}
+		else if (doFun == 'invitefailed') {
+			// 发起呼叫失败事件
+			fn_updatelog('发起呼叫失败事件');
+		}
+		else if (doFun == 'accepted') {
+			// 对端应答事件
+			fn_updatelog('对端应答事件');
+		}
+		else if (doFun == 'ringing') {
+			// 来电事件
+			fn_updatelog('来电事件，号码:'+msg);
+		}
+		else if (doFun == 'onHangup') {
+			// 挂机事件
+			if (msg == 'normal') {
+				fn_updatelog('挂机事件: 本端正常挂机');
+			}
+			else if (msg == 'byed') {
+				fn_updatelog('挂机事件: 对端正常挂机');
+			}
+			else if (msg == 'rejected') {
+				fn_updatelog('挂机事件: 对端拒接');
+			}
+			else if (msg == 'unallocated') {
+				fn_updatelog('挂机事件: 呼叫号码为空号');
+			}
+			else if (msg == 'noresponse') {
+				fn_updatelog('挂机事件: 呼叫无响应');
+			}
+			else if (msg == 'noanswer') {
+				fn_updatelog('挂机事件: 对方无应答');
+			}
+			else {
+				fn_updatelog('挂机事件: '+msg);
+			}
+		}
+		else {
+			// 其他未知事件
+			fn_updatelog(msg);
+		} 
+	} 
+
+	/*Cloopen初始化成功后的自定义函数*/
+	function initCallBack(){
+	   
+	}
+</script>
+
 
 <!--{template common/mainfooter}-->

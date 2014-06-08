@@ -81,11 +81,11 @@ function start(){
 		var name=$(this).attr("name");
 		users.push({id:id,number:number,name:name});
 	});
-	main.inviteConf(users,function(data){
+	main.joinConf(users,function(data){
 		if(data.status){
 			location.href="metting.php?id="+main.metting.id;
 		}else{
-			alert("邀请失败");
+			alert("添加邀请人失败");
 		}
 	});
 }

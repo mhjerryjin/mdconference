@@ -24,6 +24,22 @@ class Account{
 		$response = $this->oauth->oAuthRequest($this->oauth->host.'user/all', 'GET', $params);
 		return json_decode($response, true);
 	}
+	
+	function get_user_by_uid($uid){
+		$params = array('u_id'=>$uid);
+		$params['access_token']=$this->oauth->access_token;
+		$params['format']='json';
+		$response = $this->oauth->oAuthRequest($this->oauth->host.'user/detail', 'GET', $params);
+		return json_decode($response, true);
+	}
+	
+	function get_users_by_uids($uids){
+		$params = array('u_ids'=>$uids);
+		$params['access_token']=$this->oauth->access_token;
+		$params['format']='json';
+		$response = $this->oauth->oAuthRequest($this->oauth->host.'user/list', 'GET', $params);
+		return json_decode($response, true);
+	}
 }
 
 ?>

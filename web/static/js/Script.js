@@ -67,12 +67,6 @@ $("#order").click(function () {
     $("#orderDate").show();
 })
 
-$('.form_datetime').datetimepicker({
-    language:  'zh-CN',
-    weekStart: 1,
-    todayBtn: 1,
-    pickerPosition: "bottom-left",
-});
 $("#userCheck").click(function () {
     $("#Hk_camUser").slideToggle(200);
 })
@@ -94,18 +88,18 @@ $("#luyin").click(function () {
     $("#luyin").toggleClass("selLocal");
     $("#luyin span.audio").toggleClass("audio2", "audio")
 })
-$("#joinBtn").click(function () {
-    $("#joinBtn").addClass("highlight");
+$("#mettinguser").delegate('#joinBtn','click',function(){
+	$("#joinBtn").addClass("highlight");
     $("#unJoinBtn").removeClass("highlight");
     $("#join_con").show();
     $("#unJoin_con").hide();
-})
-$("#unJoinBtn").click(function () {
-    $("#joinBtn").removeClass("highlight");
+});
+$("#mettinguser").delegate('#unJoinBtn','click',function(){
+	$("#joinBtn").removeClass("highlight");
     $("#unJoinBtn").addClass("highlight");
     $("#join_con").hide();
     $("#unJoin_con").show();
-})
+});
 if(typeof($.fn.datetimepicker)!= 'undefined'){
     $('.form_datetime').datetimepicker({
         language:  'zh-CN',

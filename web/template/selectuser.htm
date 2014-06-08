@@ -82,13 +82,7 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="Hk_pagination">
-                    <a class="Hk_prev" href="javascript:history.back();">&lt; 返回上一步</a>
-                    <a class="Hk_next" href="javascript:sure();">
-                        <span class="text">确认</span>
-                        <span class="icon"></span>
-                    </a>
-                </div>
+
             </div>
             <div class="clear"></div>
         </div>
@@ -181,19 +175,19 @@
             </div>
             <div class="clear"></div>
             </div>
-            <div class="Hk_pagination">
-                <a class="Hk_prev">&lt; 返回上一步</a>
-                <form action="invite.php" method="post" id="from">
-                	<input type="hidden" name="users"/>
-                </form>
-                <a class="Hk_next">
-                    <span class="text" onclick="selectuser.next();">下一步</span>
-                    <span class="icon"></span>
-                </a>
-                
-            </div>
         <div class="clear"></div>
         </div>
+        <div class="Hk_pagination">
+               <a class="Hk_prev">&lt; 返回上一步</a>
+               <form action="invite.php" method="post" id="from">
+               	<input type="hidden" name="users"/>
+               </form>
+               <a class="Hk_next">
+                   <span class="text" onclick="selectuser.next();">下一步</span>
+                   <span class="icon"></span>
+               </a>
+               
+           </div>
         <div class="clear"></div>
     </div>
 <script src="static/js/jquery.mousewheel.js"></script>
@@ -208,16 +202,6 @@
         $("#companyname").text( main.current.company);
 	});
 	var selectuser = new selectuser($("#user_list")[0]);
-	function sure(){
-		var users=new Array();
-		$("#mobile_con>div.Hk_mobile").each(function(){
-			var name=$(this).find("input.Hk_MName").val();
-			var number=$(this).find("input.Hk_MTel").val();
-			if(number!=null){
-				users.push({id:'',name:name,number:number,avatar:"static/images/default.gif"});
-			}
-		});
-	}
 </script>
 
 <!--{template common/mainfooter}-->

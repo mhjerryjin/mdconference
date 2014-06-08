@@ -1,5 +1,5 @@
 <?php
-define('WEB_ROOT', 'E:/hackthon/mdconference/web/');
+include_once ('./config/config.php');
 
 function printarr($arr){
 	echo '<pre>';
@@ -31,7 +31,6 @@ function template($file, $templateid = 0, $tpldir = 'template') {
 		$objfile = WEB_ROOT.'data/template/'.$templateid.'_'.$file.'.tpl.php';//模板缓存文件，此处$objfile变量的值可能是D:\discuz\forumdata\templates\1_demo.tpl.php
 		$cachefile='data/template/'.$templateid.'_'.$file.'.tpl.php';
 	}
-	
 	require_once WEB_ROOT.'source/class_template.php';
 	$template = new template();
 	$template->parse_template($tplfile, $templateid, $tpldir,$file,$cachefile);
