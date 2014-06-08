@@ -15,8 +15,8 @@ var selectuser = function (el, param) {
                     _self.search();
                 });
                 //添加一个用户
-                fromuser.find("div.addItem").click(function () {
-                    var li = $(this).parent("div.searchItem").clone();
+                fromuser.find("div.searchItem").click(function () {
+                    var li = $(this).clone();
                     _self.cloneToResult(li);
 
                 });

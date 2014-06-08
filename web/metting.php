@@ -20,12 +20,10 @@
 
 	$metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
 	
-	if (property_exists($metting,'status')){
-		printarr($metting);
+	if ($metting->status==0){
+		redirect('index.php?stop=1',true);
 		exit();
 	}
-	printarr($metting);
-	exit();
 	//如果会议需要密码
 	$allowjoin=false; //是否允许加入会议
 	
