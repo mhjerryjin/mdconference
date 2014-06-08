@@ -28,9 +28,11 @@ exports.config = config;
 var accessHandler = require("./lib/access");
 var authHandler = require("./lib/auth");
 var notifyHandler = require("./lib/notify");
+var smsHandler = require("./lib/sms");
 var handle = {};
 handle["/"] = accessHandler.homepage;
-handle["/getuser"] = accessHandler.getAccount;
+handle["/getUser"] = accessHandler.getAccount;
+handle["/getUserConfs"] = accessHandler.getUserConfs;
 handle["/getConf"] = accessHandler.getConf;
 handle["/getConfUsers"] = accessHandler.getConfUsers;
 handle["/createConf"] = accessHandler.createConf;
@@ -45,5 +47,9 @@ handle["/auth"] = authHandler.access;
 
 handle["/notify/join"] = notifyHandler.join;
 handle["/notify/quit"] = notifyHandler.quit;
+handle["/notify/stop"] = notifyHandler.stop;
+handle["/notify/record"] = notifyHandler.record;
+
+handle["/send"] = smsHandler.sendNotice;
 
 exports.router = handle;
