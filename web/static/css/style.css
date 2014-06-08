@@ -52,445 +52,6 @@ a:link {
   height: auto;
   margin: 0 auto;
 }
-.Hk_wrap .Hk_SearchWrap {
-  position: relative;
-  height: auto;
-  margin: 30px auto 0 auto;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_SearchBtn {
-  position: relative;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_SearchBtn a {
-  width: auto;
-  float: left;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 20px;
-  color: #aaa;
-  border: 1px solid #f4f4f4;
-  border-bottom: 0;
-  margin-right: 2px;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_SearchBtn a:hover {
-  border: 1px solid #ababab;
-  border-bottom: 0;
-  background: #FFF;
-  color: #111;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_SearchBtn a.local {
-  border: 1px solid #ababab;
-  border-bottom: 0;
-  background: #FFF;
-  color: #111;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_Search {
-  position: relative;
-  color: #111;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_Search .Hk_SearchArea {
-  position: relative;
-  border: 1px solid #ababab ;
-  height: 45px;
-  line-height: 45px;
-  padding: 0 15px;
-  background: #FFF;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_Search .Hk_SearchArea .Hk_SearchText {
-  height: 33px;
-  line-height: 33px;
-  color: #111;
-  width: 540px;
-  background: #FFF;
-  border: 0;
-  margin-top: 6px;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_Search .Hk_SearchArea .Hk_serBtn {
-  width: 23px;
-  height: 23px;
-  float: right;
-  border: 0;
-  background: url(../images/searchBtn.png) center center no-repeat;
-  margin: 12px 0 0 0;
-  cursor: pointer;
-}
-.Hk_wrap .Hk_SearchWrap .Hk_invite {
-  position: relative;
-}
-.Hk_wrap .Hk_selectWrap {
-  position: relative;
-  margin: 20px auto 0 auto;
-  overflow: hidden;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea {
-  width: 320px;
-  height: 420px;
-  float: left;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType {
-  width: 320px;
-  height: 50px;
-  float: left;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType a {
-  width: 155px;
-  height: 40px;
-  line-height: 40px;
-  background: #e5e5e5;
-  font-size: 16px;
-  text-align: center;
-  margin-right: 1px;
-  display: block;
-  float: left;
-  position: relative;
-  top: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType a:hover {
-  background: #FFF;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType a span.all {
-  width: 20px;
-  height: 30px;
-  line-height: 15px;
-  position: absolute;
-  left: 10px;
-  top: 5px;
-  font-size: 12px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType a.select {
-  height: 50px;
-  line-height: 50px;
-  background: #FFF;
-  top: 0;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_searchType a.select span.all {
-  top: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users {
-  width: 320px;
-  height: 380px;
-  float: left;
-  background: #FFF;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_leftFont {
-  width: 40px;
-  height: 380px;
-  float: left;
-  text-align: center;
-  position: relative;
-  border-right: 1px solid #ccc;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_leftFont span {
-  width: 20px;
-  height: 15px;
-  line-height: 15px;
-  font-size: 12px;
-  color: #CCC;
-  overflow: hidden;
-  display: inline-block;
-  cursor: pointer;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_leftFont span.weight {
-  font-weight: bold;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList {
-  width: 279px;
-  height: 335px;
-  overflow-y: auto;
-  padding: 10px 0;
-  margin: 5px 0;
-  overflow-x: hidden;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem {
-  width: 260px;
-  height: 30px;
-  float: left;
-  margin-bottom: 3px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .firstLetter {
-  width: 20px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .avatar {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .fullname {
-  width: 45px;
-  line-height: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-  color: #111;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .job {
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  font-size: 12px;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem .addItem {
-  width: 23px;
-  height: 23px;
-  float: left;
-  margin-top: 3px;
-  text-indent: -9999em;
-  display: none;
-  cursor: pointer;
-  background-image: url(../images/select.png);
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem:hover {
-  background: #c6e3ff;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem:hover .addItem {
-  display: block;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .item {
-  position: relative;
-  padding: 0 20px;
-  line-height: 30px;
-  margin: 2px 0;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .item .itemLeft {
-  width: 160px;
-  float: left;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .item .itemRight {
-  width: 120px;
-  float: right;
-  cursor: pointer;
-  display: none;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .item:hover {
-  background: #c6e3ff;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .item:hover .itemRight {
-  display: block;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList {
-  position: relative;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem {
-  position: relative;
-  padding: 0 20px 0 40px;
-  height: 30px;
-  line-height: 30px;
-  margin: 2px 0;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem .avatar {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem .avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem .fullname {
-  width: 45px;
-  line-height: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-  color: #111;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem .job {
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  font-size: 12px;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem .addItem {
-  width: 23px;
-  height: 23px;
-  float: right;
-  margin-top: 3px;
-  text-indent: -9999em;
-  display: none;
-  cursor: pointer;
-  background-image: url(../images/select.png);
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem:hover {
-  background: #c6e3ff;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem:hover .addItem {
-  display: block;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea {
-  width: 270px;
-  height: 400px;
-  float: right;
-  padding: 10px 0;
-  background: #FFF;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle {
-  position: relative;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 10px;
-  border-bottom: 1px solid #ccc;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.yixuan {
-  line-height: 40px;
-  padding: 0 10px;
-  font-size: 16px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.clearAll {
-  line-height: 40px;
-  float: right;
-  font-size: 12px;
-  color: #aaa;
-  cursor: pointer;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.clearAll:hover {
-  color: #06c;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users {
-  width: 270px;
-  height: 380px;
-  float: left;
-  background: #FFF;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList {
-  width: 270px;
-  height: 335px;
-  margin: 5px 0;
-  overflow-y: auto;
-  padding: 10px 0;
-  overflow-x: hidden;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem {
-  width: 240px;
-  height: 30px;
-  float: left;
-  padding: 0 10px;
-  margin-bottom: 3px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .avatar {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .fullname {
-  width: 60px;
-  line-height: 30px;
-  height: 30px;
-  float: left;
-  color: #111;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .job {
-  width: 95px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  font-size: 12px;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .remove {
-  width: 23px;
-  height: 23px;
-  float: left;
-  margin-top: 3px;
-  text-indent: -9999em;
-  display: none;
-  cursor: pointer;
-  background: url(../images/delete.png) center center no-repeat;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem:hover {
-  background: #c6e3ff;
-}
-.Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem:hover .remove {
-  display: block;
-}
-.Hk_wrap .Hk_pagination {
-  position: relative;
-  height: 40px;
-  line-height: 40px;
-  clear: both;
-  text-align: right;
-  margin: 20px auto 0 auto;
-}
-.Hk_wrap .Hk_pagination a.Hk_prev {
-  width: 110px;
-  height: 40px;
-  line-height: 40px;
-  display: inline-block;
-  float: none;
-  text-align: center;
-  margin-right: 15px;
-  position: relative;
-  top: -15px;
-  color: #ababab;
-}
-.Hk_wrap .Hk_pagination a.Hk_next {
-  width: 90px;
-  height: 40px;
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 20px;
-  float: none;
-  text-align: center;
-  background: #a3e0aa;
-  color: #6a926f;
-  border-radius: 5px;
-  position: relative;
-  font-size: 14px;
-}
-.Hk_wrap .Hk_pagination a.Hk_next span.text {
-  position: relative;
-  top: -15px;
-  line-height: 40px;
-  width: auto;
-  display: inline-block;
-}
-.Hk_wrap .Hk_pagination a.Hk_next span.icon {
-  width: 10px;
-  height: 40px;
-  display: inline-block;
-  margin-left: 10px;
-  background: url(../images/next.png) center center no-repeat;
-}
-.Hk_wrap .Hk_pagination a.Hk_next:hover {
-  background: #82cc8b;
-}
 .Hk_wrap .Hk_meeting {
   position: relative;
   padding-bottom: 20px;
@@ -1120,6 +681,445 @@ a:link {
   text-indent: -9999em;
   background: url(../images/setIcon.png) center center no-repeat;
 }
+.Hk_SearchWrap {
+  position: relative;
+  height: auto;
+  margin: 30px auto 0 auto;
+}
+.Hk_SearchWrap .Hk_SearchBtn {
+  position: relative;
+}
+.Hk_SearchWrap .Hk_SearchBtn a {
+  width: auto;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: #aaa;
+  border: 1px solid #f4f4f4;
+  border-bottom: 0;
+  margin-right: 2px;
+}
+.Hk_SearchWrap .Hk_SearchBtn a:hover {
+  border: 1px solid #ababab;
+  border-bottom: 0;
+  background: #FFF;
+  color: #111;
+}
+.Hk_SearchWrap .Hk_SearchBtn a.local {
+  border: 1px solid #ababab;
+  border-bottom: 0;
+  background: #FFF;
+  color: #111;
+}
+.Hk_SearchWrap .Hk_Search {
+  position: relative;
+  color: #111;
+}
+.Hk_SearchWrap .Hk_Search .Hk_SearchArea {
+  position: relative;
+  border: 1px solid #ababab ;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+  background: #FFF;
+}
+.Hk_SearchWrap .Hk_Search .Hk_SearchArea .Hk_SearchText {
+  height: 33px;
+  line-height: 33px;
+  color: #111;
+  width: 540px;
+  background: #FFF;
+  border: 0;
+  margin-top: 6px;
+}
+.Hk_SearchWrap .Hk_Search .Hk_SearchArea .Hk_serBtn {
+  width: 23px;
+  height: 23px;
+  float: right;
+  border: 0;
+  background: url(../images/searchBtn.png) center center no-repeat;
+  margin: 12px 0 0 0;
+  cursor: pointer;
+}
+.Hk_SearchWrap .Hk_invite {
+  position: relative;
+}
+.Hk_selectWrap {
+  position: relative;
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+}
+.Hk_selectWrap .Hk_selectArea {
+  width: 320px;
+  height: 420px;
+  float: left;
+}
+.Hk_selectWrap .Hk_selectedArea {
+  width: 270px;
+  height: 400px;
+  float: right;
+  padding: 10px 0;
+  background: #FFF;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.yixuan {
+  line-height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.clearAll {
+  line-height: 40px;
+  float: right;
+  font-size: 12px;
+  color: #aaa;
+  cursor: pointer;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_selectedTitle span.clearAll:hover {
+  color: #06c;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users {
+  width: 270px;
+  height: 380px;
+  float: left;
+  background: #FFF;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList {
+  width: 270px;
+  height: 335px;
+  margin: 5px 0;
+  overflow-y: auto;
+  padding: 10px 0;
+  overflow-x: hidden;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem {
+  width: 240px;
+  height: 30px;
+  float: left;
+  padding: 0 10px;
+  margin-bottom: 3px;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .avatar {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .fullname {
+  width: 60px;
+  line-height: 30px;
+  height: 30px;
+  float: left;
+  color: #111;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .job {
+  width: 95px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem .remove {
+  width: 23px;
+  height: 23px;
+  float: left;
+  margin-top: 3px;
+  text-indent: -9999em;
+  display: none;
+  cursor: pointer;
+  background: url(../images/delete.png) center center no-repeat;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem:hover {
+  background: #c6e3ff;
+}
+.Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem:hover .remove {
+  display: block;
+}
+.Hk_searchType {
+  width: 320px;
+  height: 50px;
+  float: left;
+}
+.Hk_searchType a {
+  width: 155px;
+  height: 40px;
+  line-height: 40px;
+  background: #e5e5e5;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 1px;
+  display: block;
+  float: left;
+  position: relative;
+  top: 10px;
+}
+.Hk_searchType a:hover {
+  background: #FFF;
+}
+.Hk_searchType a span.all {
+  width: 20px;
+  height: 30px;
+  line-height: 15px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  font-size: 12px;
+}
+.Hk_searchType a.select {
+  height: 50px;
+  line-height: 50px;
+  background: #FFF;
+  top: 0;
+}
+.Hk_searchType a.select span.all {
+  top: 10px;
+}
+.Hk_users {
+  width: 320px;
+  height: 380px;
+  float: left;
+  background: #FFF;
+}
+.Hk_users .Hk_leftFont {
+  width: 40px;
+  height: 380px;
+  float: left;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #ccc;
+}
+.Hk_users .Hk_leftFont span {
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 12px;
+  color: #CCC;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+.Hk_users .Hk_leftFont span.weight {
+  font-weight: bold;
+}
+.Hk_users .Hk_userList {
+  width: 279px;
+  height: 335px;
+  overflow-y: auto;
+  padding: 10px 0;
+  margin: 5px 0;
+  overflow-x: hidden;
+}
+.Hk_users .Hk_userList .searchItem {
+  width: 260px;
+  height: 30px;
+  float: left;
+  margin-bottom: 3px;
+}
+.Hk_users .Hk_userList .searchItem .firstLetter {
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+}
+.Hk_users .Hk_userList .searchItem .avatar {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+}
+.Hk_users .Hk_userList .searchItem .avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.Hk_users .Hk_userList .searchItem .fullname {
+  width: 45px;
+  line-height: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  color: #111;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+.Hk_users .Hk_userList .searchItem .job {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+.Hk_users .Hk_userList .searchItem .addItem {
+  width: 23px;
+  height: 23px;
+  float: left;
+  margin-top: 3px;
+  text-indent: -9999em;
+  display: none;
+  cursor: pointer;
+  background-image: url(../images/select.png);
+}
+.Hk_users .Hk_userList .searchItem:hover {
+  background: #c6e3ff;
+}
+.Hk_users .Hk_userList .searchItem:hover .addItem {
+  display: block;
+}
+.Hk_users .item {
+  position: relative;
+  padding: 0 20px;
+  line-height: 30px;
+  margin: 2px 0;
+}
+.Hk_users .item .itemLeft {
+  width: 160px;
+  float: left;
+}
+.Hk_users .item .itemRight {
+  width: 120px;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+.Hk_users .item:hover {
+  background: #c6e3ff;
+}
+.Hk_users .item:hover .itemRight {
+  display: block;
+}
+.Hk_users .subList {
+  position: relative;
+}
+.Hk_users .subList .subItem {
+  position: relative;
+  padding: 0 20px 0 40px;
+  height: 30px;
+  line-height: 30px;
+  margin: 2px 0;
+}
+.Hk_users .subList .subItem .avatar {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+}
+.Hk_users .subList .subItem .avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.Hk_users .subList .subItem .fullname {
+  width: 45px;
+  line-height: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  color: #111;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+.Hk_users .subList .subItem .job {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+.Hk_users .subList .subItem .addItem {
+  width: 23px;
+  height: 23px;
+  float: right;
+  margin-top: 3px;
+  text-indent: -9999em;
+  display: none;
+  cursor: pointer;
+  background-image: url(../images/select.png);
+}
+.Hk_users .subList .subItem:hover {
+  background: #c6e3ff;
+}
+.Hk_users .subList .subItem:hover .addItem {
+  display: block;
+}
+.Hk_pagination {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  clear: both;
+  text-align: right;
+  margin: 20px auto 0 auto;
+}
+.Hk_pagination a.Hk_prev {
+  width: 110px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  float: none;
+  text-align: center;
+  margin-right: 15px;
+  position: relative;
+  top: -15px;
+  color: #ababab;
+}
+.Hk_pagination a.Hk_next {
+  width: 90px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 20px;
+  float: none;
+  text-align: center;
+  background: #a3e0aa;
+  color: #6a926f;
+  border-radius: 5px;
+  position: relative;
+  font-size: 14px;
+}
+.Hk_pagination a.Hk_next span.text {
+  position: relative;
+  top: -15px;
+  line-height: 40px;
+  width: auto;
+  display: inline-block;
+}
+.Hk_pagination a.Hk_next span.icon {
+  width: 10px;
+  height: 40px;
+  display: inline-block;
+  margin-left: 10px;
+  background: url(../images/next.png) center center no-repeat;
+}
+.Hk_pagination a.Hk_next:hover {
+  background: #82cc8b;
+}
 .Hk_inviteType {
   position: relative;
   height: 50px;
@@ -1596,6 +1596,67 @@ a.downBtn:hover {
   width: 100%;
   background: rgba(255, 255, 255, 0.4);
   filter: alpha(opacity=40);
+}
+#bodyBg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(171, 171, 171, 0.6);
+  filter: alpha(opacity=60);
+  z-index: 100;
+  display: none;
+}
+.addUserWrap {
+  width: 620px;
+  height: 600px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -335px;
+  margin-top: -325px;
+  padding: 20px;
+  border: 5px solid #ccc;
+  background: #FFF;
+  display: none;
+  z-index: 101;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.flowUser .Hk_selectedArea {
+  border: 1px solid #e5e5e5;
+}
+.flowUser .Hk_users {
+  height: 365px !important;
+}
+.flowUser .Hk_leftFont {
+  height: 364px !important;
+  overflow: hidden;
+}
+.flowUser .Hk_searchType a:hover {
+  background: #e5e5e5;
+}
+.flowUser .Hk_searchType .select {
+  border: 1px solid #e5e5e5;
+  border-bottom: 1px solid #FFF;
+}
+.flowUser .Hk_searchType .select:hover {
+  background: #FFF;
+}
+.closeBtn2 {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  display: block;
+  text-indent: -9999em;
+  background: url(../images/deleteIcon.png) center center no-repeat;
+}
+.bor_1 {
+  border: 1px solid #e5e5e5;
 }
 .tp_0 {
   top: 0 !important;

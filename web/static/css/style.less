@@ -50,448 +50,6 @@ a{
         height:auto;
         margin:0 auto;
     }
-    .Hk_SearchWrap{
-        position:relative;
-        height:auto;
-        margin:30px auto 0 auto;
-        .Hk_SearchBtn{
-            position:relative;
-            a{
-                width:auto;
-                float:left;
-                height:50px;
-                line-height:50px;
-                padding:0 20px;
-                color:#aaa;
-                border:1px solid #f4f4f4;
-                border-bottom:0;
-                margin-right:2px;
-                &:hover{
-                    border:1px solid #ababab;
-                    border-bottom:0;
-                    background:#FFF;
-                    color:#111;
-                }
-            }
-            a.local{
-                border:1px solid #ababab;
-                border-bottom:0;
-                background:#FFF;
-                color:#111;
-            }
-        }
-        .Hk_Search{
-            position:relative;
-            color:#111;
-            .Hk_SearchArea{
-                position:relative;
-                border:1px solid #ababab ;
-                height:45px;
-                line-height:45px;
-                padding:0 15px;
-                background:#FFF;
-                .Hk_SearchText{
-                    height:33px;
-                    line-height:33px;
-                    color:#111;
-                    width:540px;
-                    background:#FFF;
-                    border:0;
-                    margin-top:6px
-                }
-                .Hk_serBtn{
-                    width:23px;
-                    height:23px;
-                    float:right;
-                    border:0;
-                    background:url(../images/searchBtn.png) center center no-repeat;
-                    margin:12px 0 0 0;
-                    cursor:pointer;
-                }
-            }
-        }
-        .Hk_invite{
-            position:relative;
-        }
-    }
-    .Hk_selectWrap{
-        position:relative;
-        margin:20px auto 0 auto;
-        overflow:hidden;
-        .Hk_selectArea{
-            width:320px;
-            height:420px;
-            float:left;
-            .Hk_searchType{
-                width:320px;
-                height:50px;
-                float:left;
-                a{
-                    width:155px;
-                    height:40px;
-                    line-height:40px;
-                    background:#e5e5e5;
-                    font-size:16px;
-                    text-align:center;
-                    margin-right:1px;
-                    display:block;
-                    float:left;
-                    position:relative;
-                    top:10px;
-                    &:hover{
-                        background:#FFF;
-                    }
-                    span.all{
-                        width:20px;
-                        height:30px;
-                        line-height:15px;
-                        position:absolute;
-                        left:10px;
-                        top:5px;
-                        font-size:12px;
-                    }
-                }
-                a.select{
-                    height:50px;
-                    line-height:50px;
-                    background:#FFF;
-                    top:0;
-                    span.all{
-                        top:10px;
-                    }
-                }
-            }
-            .Hk_users{
-                width:320px;
-                height:380px;
-                float:left;
-                background:#FFF;
-                .Hk_leftFont{
-                    width:40px;
-                    height:380px;
-                    float:left;
-                    text-align:center;
-                    position:relative;
-                    border-right:1px solid #ccc;
-                    span{
-                        width:20px;
-                        height:15px;
-                        line-height:15px;
-                        font-size:12px;
-                        color:#CCC;
-                        overflow:hidden;
-                        display:inline-block;
-                        cursor:pointer;
-                    }
-                    span.weight{
-                        font-weight:bold;
-                    }
-                }
-                .Hk_userList{
-                    width:279px;
-                    height:335px;
-                    overflow-y:auto;
-                    padding:10px 0;
-                    margin:5px 0;
-                    overflow-x:hidden;
-                    .searchItem{
-                        width:260px;
-                        height:30px;
-                        float:left;
-                        margin-bottom:3px;
-                        .firstLetter{
-                            width:20px;
-                            height:30px;
-                            line-height:30px;
-                            float:left;
-                        }
-                        .avatar{
-                            width:30px;
-                            height:30px;
-                            float:left;
-                            margin-right:10px;
-                            img{
-                                width:30px;
-                                height:30px;
-                                border-radius:15px;
-                            }
-                        }
-                        .fullname{
-                            width:45px;
-                            line-height:30px;
-                            height:30px;
-                            float:left;
-                            margin-right:10px;
-                            color:#111;
-                            overflow:hidden;
-                            white-space:normal;
-                            text-overflow: ellipsis;
-                        }
-                        .job{
-                            width:100px;
-                            height:30px;
-                            line-height:30px;
-                            float:left;
-                            font-size:12px;
-                            overflow:hidden;
-                            white-space:normal;
-                            text-overflow: ellipsis;
-                            margin-right:10px;
-                        }
-                        .addItem{
-                            width:23px;
-                            height:23px;
-                            float:left;
-                            margin-top:3px;
-                            text-indent:-9999em;
-                            display:none;
-                            cursor:pointer;
-                            background-image:url(../images/select.png);
-                        }
-                        &:hover{
-                            background:#c6e3ff;
-                            .addItem{
-                                display:block;
-                            }
-                        }
-                    }
-                }
-                .item{
-                    position:relative;
-                    padding:0 20px;
-                    line-height:30px;
-                    margin:2px 0;
-                    .itemLeft{
-                        width:160px;
-                        float:left;
-                    }
-                    .itemRight{
-                        width: 120px;
-                        float: right;
-                        cursor: pointer;
-                        display: none;
-                    }
-                    &:hover{
-                        background:#c6e3ff;
-                        .itemRight{
-                            display:block;
-                        }
-                    }
-                }
-                .subList{
-                    position:relative;
-                    .subItem {
-                        position:relative;
-                        padding:0 20px 0 40px;
-                        height:30px;
-                        line-height:30px;
-                        margin:2px 0;
-                        .avatar{
-                            width:30px;
-                            height:30px;
-                            float:left;
-                            margin-right:10px;
-                            img{
-                                width:30px;
-                                height:30px;
-                                border-radius:15px;
-                            }
-                        }
-                        .fullname{
-                            width:45px;
-                            line-height:30px;
-                            height:30px;
-                            float:left;
-                            margin-right:10px;
-                            color:#111;
-                            overflow:hidden;
-                            white-space:normal;
-                            text-overflow: ellipsis;
-                        }
-                        .job{
-                            width:100px;
-                            height:30px;
-                            line-height:30px;
-                            float:left;
-                            font-size:12px;
-                            overflow:hidden;
-                            white-space:normal;
-                            text-overflow: ellipsis;
-                            margin-right:10px;
-                        }
-                        .addItem{
-                            width:23px;
-                            height:23px;
-                            float:right;
-                            margin-top:3px;
-                            text-indent:-9999em;
-                            display:none;
-                            cursor:pointer;
-                            background-image:url(../images/select.png);
-                        }
-                        &:hover{
-                            background:#c6e3ff;
-                            .addItem{
-                                display:block;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .Hk_selectedArea{
-            width:270px;
-            height:400px;
-            float:right;
-            padding:10px 0;
-            background:#FFF;
-            .Hk_selectedTitle{
-                position:relative;
-                height:40px;
-                line-height:40px;
-                margin:0 10px;
-                border-bottom:1px solid #ccc;
-                span.yixuan{
-                    line-height:40px;
-                    padding:0 10px;
-                    font-size:16px;
-                }
-                span.clearAll{
-                    line-height:40px;
-                    float:right;
-                    font-size:12px;
-                    color:#aaa;
-                    cursor:pointer;
-                    &:hover{
-                        color:#06c;
-                    }
-                }
-            }
-            
-            .Hk_users{
-                width:270px;
-                height:380px;
-                float:left;
-                background:#FFF;
-                .Hk_userList{
-                    width:270px;
-                    height:335px;
-                    margin:5px 0;
-                    overflow-y:auto;
-                    padding:10px 0;
-                    overflow-x:hidden;
-                    .subItem{
-                        width:240px;
-                        height:30px;
-                        float:left;
-                        padding:0 10px;
-                        margin-bottom:3px;
-                        .avatar{
-                            width:30px;
-                            height:30px;
-                            float:left;
-                            margin-right:10px;
-                            img{
-                                width:30px;
-                                height:30px;
-                                border-radius:15px;
-                            }
-                        }
-                        .fullname{
-                            width:60px;
-                            line-height:30px;
-                            height:30px;
-                            float:left;
-                            color:#111;
-                            overflow: hidden;
-                            white-space: normal;
-                            text-overflow: ellipsis;
-                        }
-                        .job{
-                            width:95px;
-                            height:30px;
-                            line-height:30px;
-                            float:left;
-                            font-size:12px;
-                            overflow:hidden;
-                            white-space:normal;
-                            text-overflow: ellipsis;
-                            margin-right:10px;
-                        }
-                        .remove{
-                            width:23px;
-                            height:23px;
-                            float:left;
-                            margin-top:3px;
-                            text-indent:-9999em;
-                            display:none;
-                            cursor:pointer;
-                            background:url(../images/delete.png) center center no-repeat;
-                        }
-                        &:hover{
-                            background:#c6e3ff;
-                            .remove{
-                                display:block;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    } 
-    .Hk_pagination{
-            position:relative;
-            height:40px;
-            line-height:40px;
-            clear:both;
-            text-align:right;
-            margin:20px auto 0 auto;
-            a.Hk_prev{
-                width:110px;
-                height:40px;
-                line-height:40px;
-                display:inline-block;
-                float:none;
-                text-align:center;
-                margin-right:15px;
-                position:relative;
-                top:-15px;
-                color:#ababab
-            }
-            a.Hk_next{
-                width:90px;
-                height:40px;
-                line-height:40px;
-                display:inline-block;
-                padding:0 20px;
-                float:none;
-                text-align:center;
-                background:#a3e0aa;
-                color:#6a926f;
-                border-radius:5px;
-                position:relative;
-                font-size:14px;
-                span.text{
-                    position:relative;
-                    top:-15px;
-                    line-height:40px;
-                    width:auto;
-                    display:inline-block;
-                    
-                }
-                span.icon{
-                    width:10px;
-                    height:40px;
-                    display:inline-block;
-                    margin-left:10px;
-                    background:url(../images/next.png) center center no-repeat;
-                    
-                }
-                &:hover{
-                    background:#82cc8b;
-                }
-            }
-        }
     .Hk_meeting{
         position:relative;
         padding-bottom:20px;
@@ -1142,6 +700,450 @@ a{
     }
 }
 
+
+    .Hk_SearchWrap{
+        position:relative;
+        height:auto;
+        margin:30px auto 0 auto;
+        .Hk_SearchBtn{
+            position:relative;
+            a{
+                width:auto;
+                float:left;
+                height:50px;
+                line-height:50px;
+                padding:0 20px;
+                color:#aaa;
+                border:1px solid #f4f4f4;
+                border-bottom:0;
+                margin-right:2px;
+                &:hover{
+                    border:1px solid #ababab;
+                    border-bottom:0;
+                    background:#FFF;
+                    color:#111;
+                }
+            }
+            a.local{
+                border:1px solid #ababab;
+                border-bottom:0;
+                background:#FFF;
+                color:#111;
+            }
+        }
+        .Hk_Search{
+            position:relative;
+            color:#111;
+            .Hk_SearchArea{
+                position:relative;
+                border:1px solid #ababab ;
+                height:45px;
+                line-height:45px;
+                padding:0 15px;
+                background:#FFF;
+                .Hk_SearchText{
+                    height:33px;
+                    line-height:33px;
+                    color:#111;
+                    width:540px;
+                    background:#FFF;
+                    border:0;
+                    margin-top:6px
+                }
+                .Hk_serBtn{
+                    width:23px;
+                    height:23px;
+                    float:right;
+                    border:0;
+                    background:url(../images/searchBtn.png) center center no-repeat;
+                    margin:12px 0 0 0;
+                    cursor:pointer;
+                }
+            }
+        }
+        .Hk_invite{
+            position:relative;
+        }
+    }
+.Hk_selectWrap{
+    position:relative;
+    margin:20px auto 0 auto;
+    overflow:hidden;
+    .Hk_selectArea{
+        width:320px;
+        height:420px;
+        float:left;
+    }
+    .Hk_selectedArea{
+        width:270px;
+        height:400px;
+        float:right;
+        padding:10px 0;
+        background:#FFF;
+        .Hk_selectedTitle{
+            position:relative;
+            height:40px;
+            line-height:40px;
+            margin:0 10px;
+            border-bottom:1px solid #ccc;
+            span.yixuan{
+                line-height:40px;
+                padding:0 10px;
+                font-size:16px;
+            }
+            span.clearAll{
+                line-height:40px;
+                float:right;
+                font-size:12px;
+                color:#aaa;
+                cursor:pointer;
+                &:hover{
+                    color:#06c;
+                }
+            }
+        }
+            
+        .Hk_users{
+            width:270px;
+            height:380px;
+            float:left;
+            background:#FFF;
+            .Hk_userList{
+                width:270px;
+                height:335px;
+                margin:5px 0;
+                overflow-y:auto;
+                padding:10px 0;
+                overflow-x:hidden;
+                .subItem{
+                    width:240px;
+                    height:30px;
+                    float:left;
+                    padding:0 10px;
+                    margin-bottom:3px;
+                    .avatar{
+                        width:30px;
+                        height:30px;
+                        float:left;
+                        margin-right:10px;
+                        img{
+                            width:30px;
+                            height:30px;
+                            border-radius:15px;
+                        }
+                    }
+                    .fullname{
+                        width:60px;
+                        line-height:30px;
+                        height:30px;
+                        float:left;
+                        color:#111;
+                        overflow: hidden;
+                        white-space: normal;
+                        text-overflow: ellipsis;
+                    }
+                    .job{
+                        width:95px;
+                        height:30px;
+                        line-height:30px;
+                        float:left;
+                        font-size:12px;
+                        overflow:hidden;
+                        white-space:normal;
+                        text-overflow: ellipsis;
+                        margin-right:10px;
+                    }
+                    .remove{
+                        width:23px;
+                        height:23px;
+                        float:left;
+                        margin-top:3px;
+                        text-indent:-9999em;
+                        display:none;
+                        cursor:pointer;
+                        background:url(../images/delete.png) center center no-repeat;
+                    }
+                    &:hover{
+                        background:#c6e3ff;
+                        .remove{
+                            display:block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Hk_searchType{
+    width:320px;
+    height:50px;
+    float:left;
+    a{
+        width:155px;
+        height:40px;
+        line-height:40px;
+        background:#e5e5e5;
+        font-size:16px;
+        text-align:center;
+        margin-right:1px;
+        display:block;
+        float:left;
+        position:relative;
+        top:10px;
+        &:hover{
+            background:#FFF;
+        }
+        span.all{
+            width:20px;
+            height:30px;
+            line-height:15px;
+            position:absolute;
+            left:10px;
+            top:5px;
+            font-size:12px;
+        }
+    }
+    a.select{
+        height:50px;
+        line-height:50px;
+        background:#FFF;
+        top:0;
+        span.all{
+            top:10px;
+        }
+    }
+}
+.Hk_users{
+    width:320px;
+    height:380px;
+    float:left;
+    background:#FFF;
+    .Hk_leftFont{
+        width:40px;
+        height:380px;
+        float:left;
+        text-align:center;
+        position:relative;
+        border-right:1px solid #ccc;
+        span{
+            width:20px;
+            height:15px;
+            line-height:15px;
+            font-size:12px;
+            color:#CCC;
+            overflow:hidden;
+            display:inline-block;
+            cursor:pointer;
+        }
+        span.weight{
+            font-weight:bold;
+        }
+    }
+    .Hk_userList{
+        width:279px;
+        height:335px;
+        overflow-y:auto;
+        padding:10px 0;
+        margin:5px 0;
+        overflow-x:hidden;
+        .searchItem{
+            width:260px;
+            height:30px;
+            float:left;
+            margin-bottom:3px;
+            .firstLetter{
+                width:20px;
+                height:30px;
+                line-height:30px;
+                float:left;
+            }
+            .avatar{
+                width:30px;
+                height:30px;
+                float:left;
+                margin-right:10px;
+                img{
+                    width:30px;
+                    height:30px;
+                    border-radius:15px;
+                }
+            }
+            .fullname{
+                width:45px;
+                line-height:30px;
+                height:30px;
+                float:left;
+                margin-right:10px;
+                color:#111;
+                overflow:hidden;
+                white-space:normal;
+                text-overflow: ellipsis;
+            }
+            .job{
+                width:100px;
+                height:30px;
+                line-height:30px;
+                float:left;
+                font-size:12px;
+                overflow:hidden;
+                white-space:normal;
+                text-overflow: ellipsis;
+                margin-right:10px;
+            }
+            .addItem{
+                width:23px;
+                height:23px;
+                float:left;
+                margin-top:3px;
+                text-indent:-9999em;
+                display:none;
+                cursor:pointer;
+                background-image:url(../images/select.png);
+            }
+            &:hover{
+                background:#c6e3ff;
+                .addItem{
+                    display:block;
+                }
+            }
+        }
+    }
+    .item{
+        position:relative;
+        padding:0 20px;
+        line-height:30px;
+        margin:2px 0;
+        .itemLeft{
+            width:160px;
+            float:left;
+        }
+        .itemRight{
+            width: 120px;
+            float: right;
+            cursor: pointer;
+            display: none;
+        }
+        &:hover{
+            background:#c6e3ff;
+            .itemRight{
+                display:block;
+            }
+        }
+    }
+    .subList{
+        position:relative;
+        .subItem {
+            position:relative;
+            padding:0 20px 0 40px;
+            height:30px;
+            line-height:30px;
+            margin:2px 0;
+            .avatar{
+                width:30px;
+                height:30px;
+                float:left;
+                margin-right:10px;
+                img{
+                    width:30px;
+                    height:30px;
+                    border-radius:15px;
+                }
+            }
+            .fullname{
+                width:45px;
+                line-height:30px;
+                height:30px;
+                float:left;
+                margin-right:10px;
+                color:#111;
+                overflow:hidden;
+                white-space:normal;
+                text-overflow: ellipsis;
+            }
+            .job{
+                width:100px;
+                height:30px;
+                line-height:30px;
+                float:left;
+                font-size:12px;
+                overflow:hidden;
+                white-space:normal;
+                text-overflow: ellipsis;
+                margin-right:10px;
+            }
+            .addItem{
+                width:23px;
+                height:23px;
+                float:right;
+                margin-top:3px;
+                text-indent:-9999em;
+                display:none;
+                cursor:pointer;
+                background-image:url(../images/select.png);
+            }
+            &:hover{
+                background:#c6e3ff;
+                .addItem{
+                    display:block;
+                }
+            }
+        }
+    }
+} 
+.Hk_pagination{
+            position:relative;
+            height:40px;
+            line-height:40px;
+            clear:both;
+            text-align:right;
+            margin:20px auto 0 auto;
+            a.Hk_prev{
+                width:110px;
+                height:40px;
+                line-height:40px;
+                display:inline-block;
+                float:none;
+                text-align:center;
+                margin-right:15px;
+                position:relative;
+                top:-15px;
+                color:#ababab
+            }
+            a.Hk_next{
+                width:90px;
+                height:40px;
+                line-height:40px;
+                display:inline-block;
+                padding:0 20px;
+                float:none;
+                text-align:center;
+                background:#a3e0aa;
+                color:#6a926f;
+                border-radius:5px;
+                position:relative;
+                font-size:14px;
+                span.text{
+                    position:relative;
+                    top:-15px;
+                    line-height:40px;
+                    width:auto;
+                    display:inline-block;
+                    
+                }
+                span.icon{
+                    width:10px;
+                    height:40px;
+                    display:inline-block;
+                    margin-left:10px;
+                    background:url(../images/next.png) center center no-repeat;
+                    
+                }
+                &:hover{
+                    background:#82cc8b;
+                }
+            }
+        }
 .Hk_inviteType{
     position:relative;
     height:50px;
@@ -1622,7 +1624,71 @@ a.downBtn{
 }
 
 
-
+#bodyBg{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background:rgba(171,171,171,0.6);
+    filter:alpha(opacity=60);
+    z-index:100;
+    display:none;
+}
+.addUserWrap{
+    width:620px;
+    height:600px;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-335px;
+    margin-top:-325px;
+    padding:20px;
+    border:5px solid #ccc;
+    background:#FFF;
+    display:none;
+    z-index:101;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.flowUser{
+    .Hk_selectedArea{
+        border:1px solid #e5e5e5;
+    }
+    .Hk_users{
+        height:365px !important;
+    }
+    .Hk_leftFont{
+        height:364px !important;
+        overflow:hidden;
+    }
+    .Hk_searchType{
+        a:hover{
+            background:#e5e5e5;
+        }
+        .select{
+            border:1px solid #e5e5e5;
+            border-bottom:1px solid #FFF;
+            &:hover{
+                background:#FFF;
+            }
+        }
+    }
+}
+.closeBtn2{
+    position:absolute;
+    right:15px;
+    top:15px;
+    width:22px;
+    height:22px;
+    line-height:22px;
+    display:block;
+    text-indent:-9999em;
+    background:url(../images/deleteIcon.png) center center no-repeat;
+}
+.bor_1{
+    border:1px solid #e5e5e5;
+}
 .tp_0{
     top:0 !important;
 }
