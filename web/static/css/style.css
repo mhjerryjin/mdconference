@@ -228,7 +228,7 @@ a:link {
 }
 .Hk_wrap .form_datetime .input-group-addon {
   width: 40px;
-  padding: 15px 0;
+  padding: 16px 0;
   float: right;
 }
 .Hk_wrap .Hk_videoWrap {
@@ -522,6 +522,9 @@ a:link {
   float: left;
   width: 100%;
   font-weight: bold;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 .Hk_wrap .Hk_videoWrap .Hk_videoRight .Hk_joinList ul li .userInfo .userTel {
   width: 100%;
@@ -1183,6 +1186,7 @@ a:link {
   display: block;
   width: auto;
   color: #06c;
+  float: left;
 }
 .Hk_inviteInfo .Hk_linkCon {
   position: relative;
@@ -1594,8 +1598,18 @@ a.downBtn:hover {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  filter: alpha(opacity=40);
+  background: rgba(255, 255, 255, 0.15);
+  filter: alpha(opacity=15);
+  text-align: center;
+  color: #909ba6;
+  font-size: 14px;
+}
+.bottomArea span {
+  display: inline-block;
+  width: auto;
+  margin: 25px 20px 0;
+  color: #909ba6;
+  font-size: 14px;
 }
 #bodyBg {
   width: 100%;
@@ -1653,7 +1667,40 @@ a.downBtn:hover {
   line-height: 22px;
   display: block;
   text-indent: -9999em;
+  z-index: 999;
   background: url(../images/deleteIcon.png) center center no-repeat;
+}
+#userWrap .Hk_SearchBtn a {
+  border: 1px solid #FFF !important;
+  border-bottom: 0 !important;
+}
+#userWrap .Hk_SearchBtn a.local {
+  border: 1px solid #ababab !important;
+  border-bottom: 0 !important;
+  background: #f4f4f4;
+}
+#loading1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  background: url(../images/loading2.gif) no-repeat;
+  display: none;
+  z-index: 9999;
+}
+#videobg {
+  position: absolute;
+  width: 220px;
+  height: 100px;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: -110px;
+  z-index: 99;
 }
 .bor_1 {
   border: 1px solid #e5e5e5;
