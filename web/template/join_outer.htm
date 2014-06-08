@@ -6,7 +6,7 @@
 <title>语音会议</title>
 </head>
 <body>
-	<form action="logging.php?mod=join&id=$id" method="post">
+	<form action="logging.php?mod=guest&id=$id" method="post">
     <div class="Hk_invitePWD">
         <div class="Hk_yhLogo"></div>
         <div class="Hk_inviteTitle" style="margin-top:35px;">您受邀加入会议：会议名称</div>
@@ -36,8 +36,8 @@
 </body>
 	<script type="text/javascript">
 	function submit(){
-		var name=document.getElementByName('name');
-		var number=document.getElementByName('number');
+		var name=document.getElementsByName('name')[0].value;
+		var number=document.getElementsByName('number')[0].value;
 		
 		if(name==''){
 			alert('请输入用户名');
