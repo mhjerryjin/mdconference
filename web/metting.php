@@ -88,7 +88,7 @@
 	if(property_exists($mettingcurrent, 'voip')){
 		request('setNumber',array('id'=>$_GET['id'],'uid'=>$current['user']['id'],'number'=>$mettingcurrent->voip));
 	}else{
-		echo '<script>location.href='.'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"].'</script>';
+		echo '<script>location.href="'.'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"].'";</script>';
 		exit();
 	}
 	
