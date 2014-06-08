@@ -38,6 +38,7 @@ handle["/getConfUsers"] = accessHandler.getConfUsers;
 handle["/createConf"] = accessHandler.createConf;
 handle["/joinConf"] = accessHandler.joinConf;
 handle["/inviteConf"] = accessHandler.inviteConf;
+handle["/callAllConf"] = accessHandler.callAllConf;
 handle["/quiteConf"] = accessHandler.quiteConf;
 handle["/muteConf"] = accessHandler.muteConf;
 handle["/unmuteConf"] = accessHandler.unmuteConf;

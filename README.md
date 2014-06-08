@@ -62,6 +62,12 @@ npm install
     3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", users:[{id:"邀请用户编号",number:"电话号码",name:"用户姓名"}...{}]}
     4. 返回内容 json，{status:"状态码"}
 
+* 通知会议所有加入方为手机的并发起会议呼叫
+    1. 请求方式 post
+    2. 请求路径 /callAllConf
+    3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", }
+    4. 返回内容 json，{status:"状态码"}
+
 * 批量退出会议
     1. 请求方式 post
     2. 请求路径 /quitConf
