@@ -73,6 +73,12 @@ $("#order").click(function () {
     $("#orderDate").show();
 })
 
+//$('.form_datetime').datetimepicker({
+//    language:  'zh-CN',
+//    weekStart: 1,
+//    todayBtn: 1,
+//    pickerPosition: "bottom-left",
+//});
 $("#userCheck").click(function () {
     $("#Hk_camUser").slideToggle(200);
 })
@@ -80,32 +86,41 @@ $("#camera").click(function () {
     $("#camera span").toggleClass("camBtn2","camBtn")
     $("#camera_con").toggle();
     $("#message_con").toggle();
+    $("#PC span").removeClass("PC2")
+    $("#desktop").hide();
 })
 $("#PC").click(function () {
     $("#PC span").toggleClass("PC2", "PC")
-$("#desktop").toggle();
+    $("#camera span").removeClass("camBtn2")
+    $("#camera_con").hide();
+    $("#desktop").toggle();
     $("#message_con").toggle();
     $("#camera_con").hide();
 })
 $("#lock").click(function () {
-   
     $("#lock span").toggleClass("lock2", "lock")
 })
 $("#luyin").click(function () {
-   
     $("#luyin span.audio").toggleClass("audio2", "audio")
 })
-$("#mettinguser").delegate('#joinBtn','click',function(){
-	$("#joinBtn").addClass("highlight");
+$("#mettinguser").delegate("#joinBtn", "click", function () {
+    $("#joinBtn").addClass("highlight");
     $("#unJoinBtn").removeClass("highlight");
     $("#join_con").show();
     $("#unJoin_con").hide();
-});
-$("#mettinguser").delegate('#unJoinBtn','click',function(){
-	$("#joinBtn").removeClass("highlight");
+
+})
+$("#mettinguser").delegate("#unJoinBtn", "click", function () {
+    $("#joinBtn").removeClass("highlight");
     $("#unJoinBtn").addClass("highlight");
     $("#join_con").hide();
     $("#unJoin_con").show();
+
+})
+$("#mettinguser").delegate("#addUserBtn", "click", function () {
+    $("#bodyBg").fadeIn(200)
+    $("#userWrap").fadeIn(200)
+
 })
 $("#Hk_reRight").click(function () {
     $("#slideMenu").slideToggle(200);
@@ -132,4 +147,9 @@ $(window).resize(function(){
     if (heights < 770) {
         $(".bottomArea").css("height", "0")
     }
+})
+
+$("#bodyBg , #closeBtn").click(function () {
+    $("#userWrap").fadeOut(200)
+    $("#bodyBg").fadeOut(200)
 })
