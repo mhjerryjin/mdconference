@@ -1,0 +1,59 @@
+
+<div class="Hk_MeetCount">
+        <a class="joined highlight" id="joinBtn">
+            <span class="join1 mt_20">已参加人数</span>
+            <span class="join1">$joinnum 人</span>
+        </a>
+        <a class="Unjoin" id="unJoinBtn">
+            <span class="join2 mt_20">未参加人数</span>
+            <span class="join2">$nojoinnum 人</span>
+        </a>
+    </div>
+    <div class="Hk_joinList" id="join_con">
+        <ul>
+        	<!--{loop $mettingusers[1] $user}-->
+            <li callid="$user->callid">
+                <div class="topics">
+                    <a href="#">
+                        <img src="$user->avatar" />
+                    </a>
+                    <div class="camers"></div>
+                </div>
+                <div class="userInfo">
+                    <span class="fullNames">$user->name</span>
+                    <span class="userTel">$user->number</span>
+                </div>
+                <div class="setArea">
+                    <a class="PcIcons">
+                        <img src="static/images/pcIcon2.png" />
+                    </a>
+                    <a class="voiceOn">静音</a>
+                    <a class="closeBtn">移除</a>
+                </div>
+            </li>
+            <!--{/loop}-->
+        </ul>
+    </div>
+    <div class="Hk_joinList" id="unJoin_con" style="display:none">
+        <ul>
+        	<!--{loop $mettingusers[0] $user}-->
+            <li>
+                <div class="topics">
+                    <a href="#">
+                        <img src="$user->avatar" />
+                    </a>
+                </div>
+                <div class="userInfo">
+                    <span class="fullNames">$user->name</span>
+                    <span class="userTel">$user->number</span>
+                </div>
+                <div class="setArea">
+                    <a class="PcIcons">
+                        <img src="static/images/pcIcon2.png" />
+                    </a>
+                    <a class="inviteUser">邀请</a>
+                </div>
+            </li>
+            <!--{/loop}-->
+        </ul>
+    </div>

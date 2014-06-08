@@ -1,15 +1,6 @@
 var main={};
 
 /*
- * 获取用户子账号和token
- */
-main.getUser=function() {
-	global.request(config.yuntongxun.geturl('getuser'),{id:main.current.id},function(data){
-		console.dir(data);
-	});
-}
-
-/*
  * 创建会议
  */
 main.createConf=function(name,pwd,time){
@@ -49,10 +40,10 @@ main.conf=function($controller,callback){
 /*
  * 获取所有参会成员
  */
-main.getConfUsers=function(){
+main.getConfUsers=function(callback){
 	main.conf('getConfUsers',function(data){
- 		
- 	})
+ 		callback&&callback(data);
+ 	});
 }
 
 /*
@@ -62,19 +53,26 @@ main.getConfUsers=function(){
 main.stopConf=function(){
 	main.conf('stopConf',function(data){
  		
- 	})
+ 	});
 }
 
 /*
- * 加入会议
- * id:云通讯会议编号
+ * 发起呼叫
  */
-main.joinConf=function(){
-	global.request(config.yuntongxun.geturl('joinConf'),{id:main.metting.id},function (data){
-		if(data.status){
-			alert("加入成功");
-		}
+main.callAllConf=function(){
+	main.conf('callAllConf',function(data){
+		
 	});
+}
+
+main.joinbatch=function($controller,users,callback){
+	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id,uid:main.current.id,users:users},function (data){
+ 		callback&&callback(data);
+	});
+}
+
+main.joinConf=function(users,callback){
+	main.joinbatch('joinConf',users, callback);
 }
 
 /*
@@ -82,9 +80,7 @@ main.joinConf=function(){
  * users[{id:'',number:'',name:''}] --id：用户ID，number：电话号码,name：用户姓名
  */
  main.inviteConf=function(users,callback){
- 	global.request(config.yuntongxun.geturl('inviteConf'),{id:main.metting.id,uid:main.current.id,users:users},function (data){
- 		callback&&callback(data);
-	});
+	 main.joinbatch('inviteConf',users, callback);
  }
 
 /*
@@ -100,10 +96,10 @@ main.batch=function($controller,users,callback){
  * 批量踢人
  * users[{callid:''}] --callid：参会用户列表的callid
  */
-main.quitConf=function(users){
+main.quitConf=function(users,callback){
 	main.batch('quitConf',users,function(data){
-
-	})
+		callback&&callback(data);
+	});
 }
 
 /*
@@ -112,16 +108,17 @@ main.quitConf=function(users){
  */
 main.muteConf=function(users){
 	main.batch('muteConf',users,function(data){
-
-	})
+		callback&&callback(data);
+	});
 }
 
 /*
- * 批量静音
+ * 批量取消静音
  * users[{callid:''}] --callid：参会用户列表的callid
  */
 main.unmuteConf=function(users){
 	main.batch('unmuteConf',users,function(data){
-
-	})
+		callback&&callback(data);
+	});
 }
+

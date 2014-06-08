@@ -64,6 +64,19 @@ var selectuser = function (el, param) {
             		var avatar=$(this).find("div.avatar").find("img").attr("src");
             		users.push({id:id,number:'',name:name,avatar:avatar});
             	});
+            	$("#mobile_con>div.Hk_mobile").each(function(){
+        			var name=$(this).find("input.Hk_MName").val();
+        			var number=$(this).find("input.Hk_MTel").val();
+        			if(number!=''){
+        				users.push({id:'',name:name,number:number,avatar:"static/images/default.gif"});
+        			}
+        		});
+            	if(users.length==0){
+            		alert("至少要邀请一个人亲");
+            		return;
+            	}
+            	users.push({id:main.current.id,name:main.current.name,number:'',avatar:main.current.avatar100});
+            	
             	$("#from").find("input[name='users']").val(JSON.stringify(users));
             	$("#from").attr("action","invite.php?id="+main.metting.id).submit();
             }
