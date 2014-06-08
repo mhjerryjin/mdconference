@@ -9,12 +9,12 @@ class template {
 	var $blocks = array();
 	var $language = array();
 	var $file = '';
-
+	
 	function parse_template($tplfile, $templateid, $tpldir, $file, $cachefile) {
 		$basefile = basename(WEB_ROOT.$tplfile, '.htm');
 		$file == 'common/header' && defined('CURMODULE') && CURMODULE && $file = 'common/header_'.CURMODULE;
 		$this->file = $file;
-
+		
 		if($fp = @fopen(WEB_ROOT.$tplfile, 'r')) {
 			$template = @fread($fp, filesize(WEB_ROOT.$tplfile));
 			fclose($fp);
@@ -26,11 +26,10 @@ class template {
 			$tplfile = $tplfile != $tpl ? $tpl.', '.$tplfile : $tplfile;
 			$this->error('template_notfound', $tplfile);
 		}
-
 		$var_regexp = "((\\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(\-\>)?[a-zA-Z0-9_\x7f-\xff]*)(\[[a-zA-Z0-9_\-\.\"\'\[\]\$\x7f-\xff]+\])*)";
 		$const_regexp = "([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)";
-
-		$headerexists = preg_match("/{(sub)?template\s+[\w\/]+?header\}/", $template);
+		
+		$headerexists = false;//preg_match("/{(sub)?template\s+[\w\/]+?header\}/", $template);
 		$this->subtemplates = array();
 		for($i = 1; $i <= 3; $i++) {
 			if(strexists($template, '{subtemplate')) {
@@ -69,9 +68,9 @@ class template {
 			$headeradd .= "\n";
 			$headeradd .= "block_get('".implode(',', $this->blocks)."');";
 		}
-
-		$template = "<? if(!defined('IN_DISCUZ')) exit('Access Denied'); {$headeradd}?>\n$template";
-
+		
+		$template = "<? {$headeradd}?>\n$template";
+		
 		$template = preg_replace("/[\n\r\t]*\{template\s+([a-z0-9_:\/]+)\}[\n\r\t]*/ies", "\$this->stripvtags('<? include template(\'\\1\'); ?>')", $template);
 		$template = preg_replace("/[\n\r\t]*\{template\s+(.+?)\}[\n\r\t]*/ies", "\$this->stripvtags('<? include template(\'\\1\'); ?>')", $template);
 		$template = preg_replace("/[\n\r\t]*\{echo\s+(.+?)\}[\n\r\t]*/ies", "\$this->stripvtags('<? echo \\1; ?>')", $template);
@@ -90,7 +89,7 @@ class template {
 			$template = str_replace($this->replacecode['search'], $this->replacecode['replace'], $template);
 		}
 		$template = preg_replace("/ \?\>[\n\r]*\<\? /s", " ", $template);
-
+		
 		if(!@$fp = fopen(WEB_ROOT.$cachefile, 'w')) {
 			$this->error('directory_notfound', dirname(WEB_ROOT.$cachefile));
 		}

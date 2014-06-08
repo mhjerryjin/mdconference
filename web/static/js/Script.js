@@ -66,6 +66,7 @@ $("#order").click(function () {
     $("#begin").removeClass("selBtn");
     $("#orderDate").show();
 })
+
 $('.form_datetime').datetimepicker({
     language:  'zh-CN',
     weekStart: 1,
@@ -105,3 +106,11 @@ $("#unJoinBtn").click(function () {
     $("#join_con").hide();
     $("#unJoin_con").show();
 })
+if(typeof($.fn.datetimepicker)!= 'undefined'){
+    $('.form_datetime').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        pickerPosition: "bottom-left",
+    });
+}
