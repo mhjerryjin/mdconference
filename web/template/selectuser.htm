@@ -83,8 +83,8 @@
                     <div class="clear"></div>
                 </div>
                 <div class="Hk_pagination">
-                    <a class="Hk_prev">&lt; 返回上一步</a>
-                    <a class="Hk_next">
+                    <a class="Hk_prev" href="javascript:history.back();">&lt; 返回上一步</a>
+                    <a class="Hk_next" href="javascript:sure();">
                         <span class="text">确认</span>
                         <span class="icon"></span>
                     </a>
@@ -208,6 +208,16 @@
         $("#companyname").text( main.current.company);
 	});
 	var selectuser = new selectuser($("#user_list")[0]);
+	function sure(){
+		var users=new Array();
+		$("#mobile_con>div.Hk_mobile").each(function(){
+			var name=$(this).find("input.Hk_MName").val();
+			var number=$(this).find("input.Hk_MTel").val();
+			if(number!=null){
+				users.push({id:'',name:name,number:number,avatar:"static/images/default.gif"});
+			}
+		});
+	}
 </script>
 
 <!--{template common/mainfooter}-->

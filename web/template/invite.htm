@@ -12,11 +12,11 @@
             <div class="Hk_user" style="float:right;">
                 <div class="Hk_topic">
                     <a href="#">
-                        <img src="images/topic.png" />
+                        <img id="avatar" src="#" />
                     </a>
                 </div>
                 <div class="Hk_Name">
-                    <div class="Hk_names">路扬</div>
+                    <div id="username" class="Hk_names">路扬</div>
                     <div class="Hk_title">创建会议</div>
                 </div>
             </div>
@@ -69,6 +69,10 @@
 <script src="static/js/bootstrap.min.js"></script>
 <script src="static/js/Script.js"></script>
 <script type="text/javascript">
+$(function(){
+	$("#avatar").attr("src",main.current.avatar100);
+	$("#username").text(main.current.name)
+})
 function start(){
 	var users= new Array();
 	$("#users li").each(function(){
