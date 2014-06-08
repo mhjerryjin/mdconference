@@ -118,7 +118,17 @@ $("#mettinguser").delegate("#unJoinBtn", "click", function () {
 
 })
 $("#mettinguser").delegate("#addUserBtn", "click", function () {
-	$("#invitedialog").html('<iframe width="620" FRAMEBORDER="0" SCROLLING="no"  height="600" src="selectuser.php?mod=dialog&id='+main.metting.id+'"></iframe>');
+    //$("#loading1").show();
+    //$.ajax({
+    //    url: "selectuser.php?mod=dialog&id=' + main.metting.id + '",
+    //    type: "get",
+    //    dataType: "html",
+    //    success: function (data) {
+    //        $("#loading1").hide();
+    //        $("#invitedialog").html('<iframe width="620" FRAMEBORDER="0" SCROLLING="no" style="background:#FFF;"  height="600" src=""></iframe><a class="closeBtn2" id="closeBtn"></a>');
+    //    }
+    //})
+    $("#invitedialog").html('<iframe width="620" FRAMEBORDER="0" SCROLLING="no" style="background:#FFF;"  height="600" src="selectuser.php?mod=dialog&id=' + main.metting.id + '"></iframe><a class="closeBtn2" id="closeBtn"></a>');
 	$("#bodyBg").fadeIn(200);
 	$("#invitedialog").fadeIn(200);    
 })
@@ -137,19 +147,22 @@ if (typeof ($.fn.datetimepicker) != 'undefined') {
 
 $(document).ready(function () {
     var heights = $(document).height();
-    var heis = heights - 770;
-    $(".bottomArea").css("height", heis)
+    var heis = heights - 753;
+    $(".bottomArea").css({ "height": heis});
 })
 $(window).resize(function(){
     var heights = $(document).height();
-    var heis = heights - 770;
-    $(".bottomArea").css("height", heis)
+    var heis = heights - 753;
+    $(".bottomArea").css({ "height": heis });
     if (heights < 770) {
         $(".bottomArea").css("height", "0")
     }
 })
-
-$("#bodyBg , #closeBtn").click(function () {
-    $("#userWrap").fadeOut(200)
+$("#invitedialog").delegate("#closeBtn", "click", function () {
+    $("#invitedialog").fadeOut(200)
+    $("#bodyBg").fadeOut(200)
+})
+$("#bodyBg").click(function () {
+    $("#invitedialog").fadeOut(200)
     $("#bodyBg").fadeOut(200)
 })
