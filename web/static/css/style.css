@@ -936,6 +936,7 @@ a:link {
   width: 260px;
   height: 30px;
   float: left;
+  cursor: pointer;
   margin-bottom: 3px;
 }
 .Hk_users .Hk_userList .searchItem .firstLetter {
