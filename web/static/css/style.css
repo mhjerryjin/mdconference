@@ -1230,6 +1230,116 @@ a:link {
 .Hk_wrap .Hk_videoWrap .Hk_videoRight .Hk_joinList ul li:hover .setArea a.closeBtn {
   display: block;
 }
+.Hk_invitePWD {
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  background: url(../images/loginBg.png) left top repeat;
+}
+.Hk_invitePWD .Hk_yhLogo {
+  width: 127px;
+  height: 51px;
+  margin: 66px auto 0 auto;
+  background: url(../images/logo.png) no-repeat center center;
+}
+.Hk_invitePWD .Hk_inviteTitle {
+  width: 100%;
+  height: 39px;
+  margin: 75px auto 0 auto;
+  font-size: 24px;
+  color: #FFF;
+  text-align: center;
+}
+.Hk_invitePWD .Hk_pwdArea {
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+.Hk_invitePWD .Hk_Outer {
+  width: 470px;
+  height: auto;
+  margin: 30px auto 0 auto;
+}
+.Hk_invitePWD .Hk_Outer .OuterLeft {
+  width: 252px;
+  height: auto;
+  float: left;
+}
+.Hk_invitePWD .Hk_Outer .OuterRight {
+  width: 171px;
+  height: 95px;
+  float: right;
+  margin-left: 23px;
+  padding-left: 23px;
+  text-align: left;
+  color: #FFF;
+  border-left: 1px solid #527ea4;
+}
+.Hk_invitePWD .Hk_Outer .OuterRight .OuterMd {
+  line-height: 23px;
+  padding-top: 5px;
+  width: 100%;
+  height: 23px;
+  margin-bottom: 8px;
+  color: #FFF;
+  float: left;
+}
+.Hk_invitePWD .Hk_Outer .OuterRight .Md_btn {
+  float: left;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px 15px 10px 44px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: url(../images/mdIcon2.png) 15px center no-repeat #90badf;
+}
+.Hk_invitePWD .Hk_Outer .OuterRight .Md_btn font {
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+  padding-left: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #FFF;
+  font-size: 12px;
+  background: url(../images/gang.png) left center no-repeat;
+}
+.Hk_invitePWD .Hk_Outer .OuterRight .Md_btn:hover {
+  background-color: #74a0c7;
+}
+.Hk_invitePWD .Pwd_text {
+  width: 230px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #c2c2c2;
+  background: #FFF;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.Hk_invitePWD .Hk_joinmeet {
+  width: 100%;
+  height: 97px;
+  margin: 105px auto 0 auto;
+  text-align: center;
+}
+.Hk_invitePWD a.joinMeet {
+  width: 247px;
+  height: 97px;
+  display: inline-block;
+  text-indent: -9999em;
+  background: url(../images/join_normal.png) center center no-repeat;
+}
+.Hk_invitePWD a.joinMeet:hover {
+  background: url(../images/join_hover.png) center center no-repeat;
+}
+.Hk_invitePWD a.joinMeet:active {
+  background: url(../images/join_click.png) center center no-repeat;
+}
 .tp_0 {
   top: 0 !important;
 }
