@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="css/style.min.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<title>语音会议</title>
+</head>
+<body>
+    <div class="Hk_wrap" style="width:830px;">
+        <div class="Hk_userTop">
+            <div class="Hk_meetInfo">
+                <div class="Hk_meetLocal">当前会议</div>
+                <div class="Hk_meetNames">语音会议名称</div>
+            </div>
+            <div class="Hk_company" style="margin-left:20px; width:30px;">
+                <a class="setBtn" id="coms2">个人设置</a>
+                <div class="slideMenu slide2" id="slideMenu">
+                    <a href="#">修改资料</a>
+                    <a href="#">切换到手机</a>
+                    <a href="#">结束会议</a>
+                </div>
+            </div>
+            <div class="Hk_user" style="float:right; border-right:1px solid #ccc; padding-right:20px;">
+                <div class="Hk_topic">
+                    <a href="#">
+                        <img src="images/topic.png" />
+                    </a>
+                </div>
+                <div class="Hk_Name">
+                    <div class="Hk_names" style=" margin:5px 0 -5px 0;vertical-align:bottom;">路扬</div>
+                    <div class="Hk_title" style="font-size:12px;">会议创建者</div>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+        
+        <div class="Hk_videoWrap">
+            <div class="Hk_videoLeft">
+                <div class="Hk_camera" id="camera_con" style="display:none">
+                    <img src="images/camera.png" />
+                    <div class="Hk_userCheck">
+                        <a class="userCheck" id="userCheck">
+                            <span class="uName">梅花管家</span>
+                            <span class="uJt"></span>
+                        </a>
+                    </div>
+                    <div class="Hk_camUser" id="Hk_camUser">
+                        <a href="#">梅花管家1</a>
+                        <a href="#">梅花管家2</a>
+                        <a href="#">梅花管家3</a>
+                        <a href="#">梅花管家4</a>
+                    </div>
+                </div>
+                <div class="Hk_camera Hk_msg" id="message_con">
+                    <img src="images/msg.png" />
+                </div>
+                <div class="Hk_bottomBtn">
+                    <a id="camera">
+                        <span class="camBtn"></span>
+                    </a>
+                    <a id="PC">
+                        <span class="PC"></span>
+                    </a>
+                    <a id="lock">
+                        <span class="lock"></span>
+                    </a>
+                    <a class="luyin" id="luyin">
+                        <span class="audio"></span>
+                        <span class="timer">已进行时长&nbsp;&nbsp;&nbsp;128:20</span>
+                        <span class="status">正在录制</span>
+                    </a>
+                    <a class="mr_0" id="addUser">
+                        <span class="addUser"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="Hk_videoRight">
+                <div class="Hk_MeetCount">
+                    <a class="joined highlight" id="joinBtn">
+                        <span class="join1 mt_20">已参加人数</span>
+                        <span class="join1">8人</span>
+                    </a>
+                    <a class="Unjoin" id="unJoinBtn">
+                        <span class="join2 mt_20">未参加人数</span>
+                        <span class="join2">10人</span>
+                    </a>
+                </div>
+                <div class="Hk_joinList" id="join_con">
+                    <ul>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                                <div class="camers"></div>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">路扬</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="voiceOn">静音</a>
+                                <a class="closeBtn">移除</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Hk_joinList" id="unJoin_con" style="display:none">
+                    <ul>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="topics">
+                                <a href="#">
+                                    <img src="images/topic.png" />
+                                </a>
+                            </div>
+                            <div class="userInfo">
+                                <span class="fullNames">test</span>
+                                <span class="userTel">12345678912</span>
+                            </div>
+                            <div class="setArea">
+                                <a class="PcIcons">
+                                    <img src="images/pcIcon2.png" />
+                                </a>
+                                <a class="inviteUser">邀请</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/Script.js"></script>
+</body>
+</html>
