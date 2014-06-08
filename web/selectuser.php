@@ -3,6 +3,8 @@
 	include_once('./source/template.php');
     include_once('./source/core.php');
     include_once('./source/char.php');
+    include_once('./source/yuntongxun/yuntongxun.php');
+    
     include_once('./source/mingdaosdk/AccessToken.php');
     include_once('./source/mingdaosdk/Account.php');
     
@@ -20,7 +22,12 @@
     	$users[$firstname][]=$user;
     }
     sort($first);
+    $port=$_SERVER["SERVER_PORT"];
     
+    $metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
+    
+    if($port==80)
+    	$port='';
     $invitelink='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/metting.php?id='.$_GET['id'];
     
     
