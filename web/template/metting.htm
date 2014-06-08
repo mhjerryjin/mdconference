@@ -157,10 +157,10 @@ body{background:url(static/images/loginBg.png) !important}
             timedCount();
         });
         
-        $("#join_con").delegate("a.voiceOn","click",function(){
+        $("#mettinguser").delegate("a.voiceOn","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
-        		main.main.muteConf([{callid:callid}],function(data){
+        		main.muteConf([{callid:callid}],function(data){
         			if(data.status){
         				$(this).removeClass("voiceOn").addClass("voiceOff");
         			}
@@ -168,20 +168,20 @@ body{background:url(static/images/loginBg.png) !important}
         		
         	}
         });
-        $("#join_con").delegate("a.voiceOff","click",function(){
+        $("#mettinguser").delegate("a.voiceOff","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
-        		main.main.unmuteConf([{callid:callid}],function(data){
+        		main.unmuteConf([{callid:callid}],function(data){
         			if(data.status){
         				$(this).removeClass("voiceOff").addClass("voiceOn");
         			}
         		});
         	}
         });
-        $("#join_con").delegate("a.closeBtn","click",function(){
+        $("#mettinguser").delegate("a.closeBtn","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
-        		main.main.quitConf([{callid:callid}],function(data){
+        		main.quitConf([{callid:callid}],function(data){
         			$(this).parents("li").first().remove();
         		});
         	}
