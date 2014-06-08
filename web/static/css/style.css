@@ -251,6 +251,7 @@ a:link {
   margin-top: 3px;
   text-indent: -9999em;
   display: none;
+  cursor: pointer;
   background-image: url(../images/select.png);
 }
 .Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .Hk_userList .searchItem:hover {
@@ -331,6 +332,7 @@ a:link {
   margin-top: 3px;
   text-indent: -9999em;
   display: none;
+  cursor: pointer;
   background-image: url(../images/select.png);
 }
 .Hk_wrap .Hk_selectWrap .Hk_selectArea .Hk_users .subList .subItem:hover {
@@ -428,6 +430,7 @@ a:link {
   margin-top: 3px;
   text-indent: -9999em;
   display: none;
+  cursor: pointer;
   background: url(../images/delete.png) center center no-repeat;
 }
 .Hk_wrap .Hk_selectWrap .Hk_selectedArea .Hk_users .Hk_userList .subItem:hover {
