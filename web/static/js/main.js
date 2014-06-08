@@ -23,7 +23,7 @@ main.createConf=function(name,pwd,time){
  * 对会议执行操作
  */
 main.conf=function($controller,callback){
-	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id},function(data){
+	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id,uid:main.current.id},function(data){
 		callback&&callback(data);
 	});
 }

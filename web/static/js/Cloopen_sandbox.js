@@ -216,9 +216,6 @@ var Cloopen = (function() {
 		case 'active'://通话中，显示挂机按钮
 			_whenCallBack(funArry.active);
 		  	break;
-		case 'accepted':
-			alert("accepted");
-			break;
 		default:
 			showLog(doFun);
 			break;	

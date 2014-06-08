@@ -1,43 +1,42 @@
 <!--{template common/header}-->
 <style type="text/css">
 #videobg{position:absolute;margin-top:-69px;left:50%;margin-left:-108px;z-index:99999;top:30%;}
+body{background:url(static/images/loginBg.png) !important}
 </style>
-	<div id="videobg">
-	    <div id="idvideophone" style="display:block">
-	        <a href="http://www.adobe.com/go/getflashplayer" alt="Get Adobe Flash player">Get Adobe Flash player</a>
-	    </div>
-	</div>
-    <div class="Hk_wrap" style="width:830px;">
-        <div class="Hk_userTop">
-            <div class="Hk_meetInfo">
-                <div class="Hk_meetLocal">当前会议</div>
-                <div class="Hk_meetNames">$metting->name</div>
+<div id="videobg">
+    <div id="idvideophone" style="display:block">
+        <a href="http://www.adobe.com/go/getflashplayer" alt="Get Adobe Flash player">Get Adobe Flash player</a>
+    </div>
+</div>
+ <div class="Hk_recordTop">
+        <div class="Hk_reCenter">
+            <div class="Hk_logo">
+                <a href="#">云话LOGO</a>
             </div>
-            <div class="Hk_company" style="margin-left:20px; width:30px;">
-                <a class="setBtn" id="coms2">个人设置</a>
-                <div class="slideMenu slide2" id="slideMenu">
+            <div class="Hk_reRight" id="Hk_reRight">
+                <div class="Hk_user">
+                    <div class="Hk_topic">
+                        <a href="#">
+                            <img src="$create['avatar100']" />
+                        </a>
+                    </div>
+                    <div class="Hk_Name">
+                        <div class="Hk_names">$create['name']</div>
+                        <div class="Hk_title">会议创建者</div>
+                    </div>
+                </div>
+                <div class="slideMenu slide3" id="slideMenu">
                     <a href="#">修改资料</a>
-                    <a href="#">切换到手机</a>
-                    <a href="#">结束会议</a>
+                    <a href="#">切换至手机接听</a>
+                    <a href="#" class="quit">退出会议</a>
                 </div>
             </div>
-            <div class="Hk_user" style="float:right; border-right:1px solid #ccc; padding-right:20px;">
-                <div class="Hk_topic">
-                    <a href="javascript:;">
-                        <img src="$create['avatar100']" />
-                    </a>
-                </div>
-                <div class="Hk_Name">
-                    <div class="Hk_names" style=" margin:5px 0 -5px 0;vertical-align:bottom;">$create['name']</div>
-                    <div class="Hk_title" style="font-size:12px;">会议创建者</div>
-                </div>
-            </div>
-            
-            <div class="clear"></div>
         </div>
-        
+    </div>
+    <div class="Hk_wrap mt_0" style="width:1000px;">
         <div class="Hk_videoWrap">
             <div class="Hk_videoLeft">
+                <div class="Hk_videoName">$metting->name</div>
                 <div class="Hk_camera" id="camera_con" style="display:none">
                     <img src="static/images/camera.png" />
                     <div class="Hk_userCheck">
@@ -54,7 +53,10 @@
                     </div>
                 </div>
                 <div class="Hk_camera Hk_msg" id="message_con">
-                    
+                    <!--  <img src="static/images/msg.png" /> -->
+                </div>
+                <div class="Hk_camera Hk_msg" id="desktop" style="display:none;">
+                    <img src="static/images/desktop.png" />
                 </div>
                 <div class="Hk_bottomBtn">
                     <a id="camera">
@@ -71,22 +73,22 @@
                         <span class="timer">已进行时长&nbsp;&nbsp;&nbsp;<font id="time">00:00</font></span>
                         <span class="status">正在录制</span>
                     </a>
-                    <a class="mr_0" id="addUser">
-                        <span class="addUser"></span>
-                    </a>
                 </div>
             </div>
-            <div class="Hk_videoRight" id="mettinguser">
-    			<!--{template block/mettinguser}-->
-			</div>
-            
+            <div class="Hk_videoRight"  id="mettinguser">
+                <!--{template block/mettinguser}-->
+            </div>
         </div>
         <div class="clear"></div>
     </div>
+    <div class="bottomArea"></div>
+
+
+
+
+	
     
 <script src="static/js/bootstrap.min.js"></script>
-<script src="static/js/bootstrap-datetimepicker.min.js"></script>
-<script src="static/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="static/js/Script.js"></script>
 <script src="static/js/swfobject.js"></script>
 <script src="static/js/Cloopen_sandbox.js"></script>

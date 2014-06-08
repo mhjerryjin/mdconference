@@ -10,6 +10,10 @@
 
 	$metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
 	
+	if (property_exists($metting,'status')){
+		printarr($metting);
+		exit();
+	}
 	//如果会议需要密码
 	$allowjoin=true; //是否允许加入会议
 	if(!empty($metting->pwd))
@@ -24,22 +28,27 @@
 			$allowjoin=false;
 		}
 	}
-	if($allowjoin){
-		
-		include_once('./source/mingdaosdk/AccessToken.php');
-		include_once('./source/mingdaosdk/Account.php');
-
-		$oauth=new AccessToken(null,null,$_SESSION['mdtoken']);
-		$account=new Account($oauth);
-		$userinfo=$account->get_user_by_uid($metting->uid);
-		$create=$userinfo['user'];
-		
-		$current=$account->get_user_baseinfo();
-		
-		$mettingcurrent=json_decode(request("getUser",array("id"=>$current['user']['id'])));
-		
-		include_once ('./source/block/block_mettinguser.php');
+	if(!$allowjoin){
+		redirect('join.php?mod=pwd&id='.$_GET['id'],true);
 	}
+		
+	include_once('./source/mingdaosdk/AccessToken.php');
+	include_once('./source/mingdaosdk/Account.php');
+
+	$oauth=new AccessToken(null,null,$_SESSION['mdtoken']);
+	$account=new Account($oauth);
+	$userinfo=$account->get_user_by_uid($metting->uid);
+	$create=$userinfo['user'];
+	
+	$current=$account->get_user_baseinfo();
+	
+	$mettingcurrent=json_decode(request("getUser",array("id"=>$current['user']['id'])));
+	
+	request('setNumber',array('id'=>$_GET['id'],'uid'=>$current['user']['id'],'number'=>$mettingcurrent->voip));
+	
+	
+	include_once ('./source/block/block_mettinguser.php');
+	
 	
 	include template('metting');
 ?>
