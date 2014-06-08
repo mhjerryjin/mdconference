@@ -44,6 +44,7 @@ handle["/muteConf"] = accessHandler.muteConf;
 handle["/unmuteConf"] = accessHandler.unmuteConf;
 handle["/pwdConf"] = accessHandler.pwdConf;
 handle["/stopConf"] = accessHandler.stopConf;
+handle["/setNumber"] = accessHandler.setNumber;
 
 handle["/auth"] = authHandler.access;
 
