@@ -1697,11 +1697,10 @@ a.downBtn:hover {
 #videobg {
   position: absolute;
   width: 220px;
-  height: 100px;
-  overflow: hidden;
+  height: 150px;
   left: 50%;
   top: 50%;
-  margin-top: -50px;
+  margin-top: -75px;
   margin-left: -110px;
   z-index: 99;
 }
