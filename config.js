@@ -3,7 +3,7 @@
 		port: 80
 	},
 	redis: {
-		host: '127.0.0.1',
+		host: '172.16.23.103',
 		port: 6379,
 		storage: {
 			userPrefix: 'md.ytx.u.', //用户信息
@@ -16,7 +16,7 @@
 		accountSid: 'aaf98f89449fa40e0144b974ec1e13cb',
 		authToken: 'd213fb19a8b24ce7b899eaa3fcc4907b',
 		appId: 'aaf98fda45df8fde0145f38eedc21164',
-		resturi: 'https://app.cloopen.com:8883',
+		//resturi: 'https://app.cloopen.com:8883',
 		baseUrl: 'https://sandboxapp.cloopen.com:8883',
 		softVersion: '2013-12-26'
 	},
