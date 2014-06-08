@@ -1,0 +1,12 @@
+<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="static/js/JSON.js"></script>
+<script type="text/javascript" src="static/js/global.js"></script>
+<script type="text/javascript" src="static/js/config.js"></script>
+<script type="text/javascript" src="static/js/main.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var request=global.getParam();
+		if(request['id'])main.metting={id:request['id']};	
+	});
+</script>
+<!--{template common/footer}-->

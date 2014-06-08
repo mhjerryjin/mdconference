@@ -1,0 +1,16 @@
+<!--{template common/header}-->
+
+	<!--{if $ischeck}-->
+	<script type="text/javascript">
+		$(function(){
+			main.joinConf();	
+		});
+	</script>
+	<!--{else}-->
+	<form action="" method="post">
+		<input type="password" id="password" name="password">
+		<button type="submit">提交密码</button>
+	</form>
+	<!--{/if}-->
+
+<!--{template common/mainfooter}-->

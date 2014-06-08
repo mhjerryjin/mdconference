@@ -1,0 +1,15 @@
+</body>
+<script type="text/javascript">
+	var main=typeof(main)!='undefined'?main:{};
+	jQuery.ajax({
+		url:"ajax/user.php?op=getcurrent",
+		dataType:'JSON',
+		async:false,
+		success:function(data){
+			if(data.user){
+				main.current=data.user;
+			}
+		}
+	});
+</script>
+</html>
