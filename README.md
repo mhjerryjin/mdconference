@@ -92,6 +92,12 @@ npm install
     3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", pwd:"会议密码，为空代表不需要密码，都可以加入"}
     4. 返回内容 json，{status:"状态码"}
 
+* 设置参会者的VOIP账号
+    1. 请求方式 post
+    2. 请求路径 /setNumber
+    3. POST内容 json，{id:"云通讯会议编号", uid:"操作用户编号", appid:"不同应用编号", number:"电话或者手机号或者VOIP账号"}
+    4. 返回内容 json，{status:"状态码"}
+
 * callid 说明
     callid 是云通讯的为每路呼叫建立的编号，是在某个会议里面的唯一编号，踢人、静音等用户级别的会控操作必须参数
 
