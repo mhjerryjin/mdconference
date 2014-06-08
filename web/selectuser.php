@@ -20,6 +20,8 @@
     	$users[$firstname][]=$user;
     }
     sort($first);
+    
+    $invitelink='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/join.php?mod=outer&id='.$_GET['id'];
     include template('selectuser');
 ?>
 
