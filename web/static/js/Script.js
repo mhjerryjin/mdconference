@@ -118,9 +118,10 @@ $("#mettinguser").delegate("#unJoinBtn", "click", function () {
 
 })
 $("#mettinguser").delegate("#addUserBtn", "click", function () {
-    $("#bodyBg").fadeIn(200)
-    $("#userWrap").fadeIn(200)
-
+	$("#invitedialog").load("selectuser.php?mod=dialog&id="+main.metting.id,function(){
+		$("#bodyBg").fadeIn(200);
+	    $("#userWrap").fadeIn(200);
+	})    
 })
 $("#Hk_reRight").click(function () {
     $("#slideMenu").slideToggle(200);

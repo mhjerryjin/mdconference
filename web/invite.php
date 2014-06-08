@@ -23,6 +23,7 @@
     
     $metting=json_decode(request("getConf",$param));
     
+   
+  	include template('invite');
     
-    include template('invite');
 ?>

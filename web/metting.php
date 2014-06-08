@@ -1,5 +1,6 @@
 <?php
 	include_once('./source/function.php');
+	session_start();
 	//如果没登录，并且不是来宾
 	if(!isset($_SESSION['mdtoken'])&&!isset($_SESSION['guest']))
 	{
