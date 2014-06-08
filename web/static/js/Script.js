@@ -57,7 +57,7 @@ $("#order").click(function () {
     $("#begin").removeClass("selBtn");
     $("#orderDate").show();
 })
-if(typeof($.datetimepicker)!= 'undefined'){
+if(typeof($.fn.datetimepicker)!= 'undefined'){
     $('.form_datetime').datetimepicker({
         language:  'zh-CN',
         weekStart: 1,
