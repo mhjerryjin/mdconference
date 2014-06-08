@@ -1,7 +1,7 @@
 <?php
-	include_once('./source/core.php');
+	session_start();
 	include_once('./source/function.php');
-	if(empty($_GET['mod'])|| !in_array($_GET['mod'], array('login','logout','join')))
+	if(empty($_GET['mod'])|| !in_array($_GET['mod'], array('login','logout','guest')))
 	{
 		redirect('index.php',true);
 	}
@@ -9,7 +9,9 @@
 
 
 	function login(){
-		
+		if(isset($_SESSION['mdtoken'])){
+			redirect('index.php',true);
+		}
 		include_once('./config/config.php');
 		include_once('./source/mingdaosdk/AccessToken.php');
 		
@@ -33,11 +35,13 @@
 		redirect('index.php',true);
 	}
 	
-	function join(){
+	function guest(){
 		$name = $_POST['name'];
 		$number=$_POST['number'];
 		
 		$guest=array('name'=>$name,'number'=>$number);
+		include_once('./source/yuntongxun/yuntongxun.php');
+		request('joinConf',array('id'=>$_GET['id'],'users'=>array(array('id'=>$number,'name'=>$name,'number'=>$number))));
 		
 		$_SESSION['guest']=$guest;
 		
