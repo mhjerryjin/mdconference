@@ -71,7 +71,6 @@ $("#userCheck").click(function () {
     $("#Hk_camUser").slideToggle(200);
 })
 $("#camera").click(function () {
-    $("#camera").toggleClass("selLocal");
     $("#camera span").toggleClass("camBtn2","camBtn")
     $("#camera_con").toggle();
     $("#message_con").toggle();
@@ -99,7 +98,7 @@ $("#mettinguser").delegate('#unJoinBtn','click',function(){
     $("#unJoinBtn").addClass("highlight");
     $("#join_con").hide();
     $("#unJoin_con").show();
-});
+})
 if(typeof($.fn.datetimepicker)!= 'undefined'){
     $('.form_datetime').datetimepicker({
         language:  'zh-CN',
