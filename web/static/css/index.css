@@ -45,7 +45,7 @@ body{
 }
 .mdlogin font{ height:30px; line-height:30px ;display:inline-block;padding-left:10px;cursor: pointer; margin-left:5px; background:url(../images/gang.png) left center no-repeat}
 .conFbutton{background: url(../images/confBtn.png) no-repeat 15px center;}
-.logoutbtn{background: url(../images/logoutBtn.png) no-repeat 15px center;background-color: #F6F6F6!important;}
+.logoutbtn{background: url(../images/logoutBtn.png) no-repeat 15px center;background-color: #e2e2e2!important;}
 .logoutbtn:hover{background-color: #CCCCCC!important;}
 .button{
 	display: inline-block;
