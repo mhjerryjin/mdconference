@@ -24,6 +24,8 @@
 		printarr($metting);
 		exit();
 	}
+	printarr($metting);
+	exit();
 	//如果会议需要密码
 	$allowjoin=false; //是否允许加入会议
 	
