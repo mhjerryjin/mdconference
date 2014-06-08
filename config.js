@@ -41,6 +41,7 @@ handle["/inviteConf"] = accessHandler.inviteConf;
 handle["/quiteConf"] = accessHandler.quiteConf;
 handle["/muteConf"] = accessHandler.muteConf;
 handle["/unmuteConf"] = accessHandler.unmuteConf;
+handle["/pwdConf"] = accessHandler.pwdConf;
 handle["/stopConf"] = accessHandler.stopConf;
 
 handle["/auth"] = authHandler.access;
