@@ -19,7 +19,12 @@ if (isset($_REQUEST['code'])) {
 if ($token) {
 	session_start();
 	$_SESSION['mdtoken'] = $token['access_token'];
-
-	redirect('index.php',true);
+	if(isset($_SESSION['mettingid'])){
+		$id=$_SESSION['mettingid'];
+		unset($_SESSION['mettingid']);
+		redirect('metting.php?id='.$id,true);	
+	}else {
+		redirect('index.php',true);
+	}
 }
 ?>

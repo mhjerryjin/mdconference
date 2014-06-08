@@ -1,8 +1,13 @@
 <?php
+	include_once('./source/function.php');
+	//如果没登录，并且不是来宾
+	if(!isset($_SESSION['mdtoken'])&&!isset($_SESSION['guest']))
+	{
+		redirect('join.php?mod=outer&id='.$_GET['id'],true);
+	}
 	
 	include_once('./source/template.php');
-	include_once('./source/function.php');
-	include_once('./source/core.php');
+	
 	include_once('./source/yuntongxun/yuntongxun.php');
 	
 	if(empty($_GET['id'])) redirect('index.php',true);

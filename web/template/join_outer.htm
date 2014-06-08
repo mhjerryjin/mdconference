@@ -6,19 +6,20 @@
 <title>语音会议</title>
 </head>
 <body>
+	<form action="logging.php?mod=join&id=$id" method="post">
     <div class="Hk_invitePWD">
         <div class="Hk_yhLogo"></div>
         <div class="Hk_inviteTitle" style="margin-top:35px;">您受邀加入会议：会议名称</div>
         <div class="Hk_pwdArea">
             <div class="Hk_Outer">
                 <div class="OuterLeft">
-                    <input type="text" class="Pwd_text" placeholder="请输入姓名" />
-                    <input type="text" class="Pwd_text" placeholder="请输入您的手机号码" />
+                    <input type="text" class="Pwd_text" name='name' placeholder="请输入姓名" />
+                    <input type="text" class="Pwd_text" name='number' placeholder="请输入您的手机号码" />
                     <div class="clear"></div>
                 </div>
                 <div class="OuterRight">
                     <div class="OuterMd">使用明道账号加入</div>
-                    <a class="Md_btn" href="#">
+                    <a class="Md_btn" href="logging.php?mod=login&id=$id">
                         <font>使用明道帐号登录</font>
                     </a>
                     <div class="clear"></div>
@@ -28,8 +29,25 @@
             <div class="clear"></div>
         </div>
         <div class="Hk_joinmeet" style="margin-top:83px;">
-            <a class="joinMeet" href="#">加入此次会议</a>
+            <a class="joinMeet" href="javascript:submit();">加入此次会议</a>
         </div>
     </div>
+    </form>
 </body>
+	<script type="text/javascript">
+	function submit(){
+		var name=document.getElementByName('name');
+		var number=document.getElementByName('number');
+		
+		if(name==''){
+			alert('请输入用户名');
+			return false;
+		}
+		if(number==''){
+			alert('请输入手机号')
+		}
+		document.forms[0].submit();
+		
+	}
+	</script>
 </html>

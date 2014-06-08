@@ -1,7 +1,7 @@
 <?php
-	session_start();
+	include_once('./source/core.php');
 	include_once('./source/function.php');
-	if(empty($_GET['mod'])|| !in_array($_GET['mod'], array('login','logout')))
+	if(empty($_GET['mod'])|| !in_array($_GET['mod'], array('login','logout','join')))
 	{
 		redirect('index.php',true);
 	}
@@ -9,22 +9,19 @@
 
 
 	function login(){
-
-		$islogin=isset($_SESSION['mdtoken']);
-
-		if($islogin){
-			include_once('./source/function.php');
-			redirect('index.php',true);
-		}else
+		
+		include_once('./config/config.php');
+		include_once('./source/mingdaosdk/AccessToken.php');
+		
+		if(!empty($_GET['id']))
 		{
-			include_once('./config/config.php');
-			include_once('./source/mingdaosdk/AccessToken.php');
-
-			$oauth=new AccessToken(CLIENT_ID,CLIENT_SECRET);
-
-			$code_url=$oauth->getAuthorizeURL(CALLBACK_URL);
-			redirect($code_url,true);
+			$_SESSION['mettingid']=$_GET['id'];
 		}
+		$oauth=new AccessToken(CLIENT_ID,CLIENT_SECRET);
+
+		$code_url=$oauth->getAuthorizeURL(CALLBACK_URL);
+		redirect($code_url,true);
+		
 	}
 
 	function logout(){
@@ -32,8 +29,18 @@
 		if (isset($_COOKIE[session_name()])) {
 		setcookie(session_name(), '', time()-42000, '/');
 		}
-		// 最后彻底销毁session.
 		session_destroy();
 		redirect('index.php',true);
+	}
+	
+	function join(){
+		$name = $_POST['name'];
+		$number=$_POST['number'];
+		
+		$guest=array('name'=>$name,'number'=>$number);
+		
+		$_SESSION['guest']=$guest;
+		
+		redirect('metting.php?id='.$_GET['id'],true);
 	}
 ?>
