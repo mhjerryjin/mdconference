@@ -22,11 +22,9 @@
     sort($first);
     
     $invitelink='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/join.php?mod=outer&id='.$_GET['id'];
-    if(!empty($_GET['mod'])&&$_GET['mod']=='dialog'){
-    	include template('block/invitedialog');
-    }else{
-    	include template('selectuser');
-    }
+    
+    
+    include template('selectuser');
     
 ?>
 

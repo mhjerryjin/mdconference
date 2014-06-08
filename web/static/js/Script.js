@@ -118,10 +118,9 @@ $("#mettinguser").delegate("#unJoinBtn", "click", function () {
 
 })
 $("#mettinguser").delegate("#addUserBtn", "click", function () {
-	$("#invitedialog").load("selectuser.php?mod=dialog&id="+main.metting.id,function(){
-		$("#bodyBg").fadeIn(200);
-	    $("#userWrap").fadeIn(200);
-	})    
+	$("#invitedialog").html('<iframe width="620" FRAMEBORDER="0" SCROLLING="no"  height="600" src="selectuser.php?mod=dialog&id='+main.metting.id+'"></iframe>');
+	$("#bodyBg").fadeIn(200);
+	$("#invitedialog").fadeIn(200);    
 })
 $("#Hk_reRight").click(function () {
     $("#slideMenu").slideToggle(200);
