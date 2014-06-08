@@ -89,7 +89,6 @@ class template {
 			$template = str_replace($this->replacecode['search'], $this->replacecode['replace'], $template);
 		}
 		$template = preg_replace("/ \?\>[\n\r]*\<\? /s", " ", $template);
-		
 		if(!@$fp = fopen(WEB_ROOT.$cachefile, 'w')) {
 			$this->error('directory_notfound', dirname(WEB_ROOT.$cachefile));
 		}

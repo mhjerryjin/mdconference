@@ -1,5 +1,5 @@
 <?php
-define('WEB_ROOT', 'D:/Solution/Hackthon/mdconference/web/');
+define('WEB_ROOT', 'E:/hackthon/mdconference/web/');
 
 function printarr($arr){
 	echo '<pre>';
