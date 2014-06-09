@@ -19,7 +19,9 @@ foreach ($joins as $join){
 		$uids[]=$join->id;
 	}
 }
-
+if(!isset($metting)){
+	$metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
+}
 if(!$isguest){
 	include_once('./source/mingdaosdk/AccessToken.php');
 	include_once('./source/mingdaosdk/Account.php');
@@ -35,8 +37,6 @@ if(!$isguest){
 	
 	if(!isset($create))
 	{
-		$metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
-		
 		$userinfo=$account->get_user_by_uid($metting->uid);
 		$create=$userinfo['user'];
 	}
@@ -53,9 +53,20 @@ foreach ($joins as $join){
 		$join->department=$usersinfoarr[$join->id]['department'];
 	}else{
 		$join->avatar='static/images/default.gif';
-		$join->department='来宾';
+		if(preg_match('/^[A-Z0-9]{8}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{12}/',$join->id))
+		{
+			$join->department='来宾';
+		}
+		else{
+			$join->department='明道用户';
+		}
 	}
-	$mettingusers[$join->state][]=$join;
+	if($join->id==$metting->uid){
+		$admin=$join;
+	}else{
+		$mettingusers[$join->state][]=$join;
+	}
+	
 }
 $joinnum=count($mettingusers[1]);
 $nojoinnum=count($mettingusers[0]);

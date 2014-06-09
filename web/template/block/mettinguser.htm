@@ -12,6 +12,30 @@
                 <div class="Hk_areas">
                     <div class="Hk_joinList" {if $joinBtn=='unJoinBtn'}style="display:none;"{/if} id="join_con">
                         <ul>
+                        <!--会议创建者-->
+                       	<!--{if isset($admin)}-->
+                       		<li callid="$admin->callid">
+                               <div class="topics">
+                                   <a href="#">
+                                       <img src="$admin->avatar" />
+                                   </a>
+                               </div>
+                               <div class="userInfo">
+                                   <span class="fullNames meetHost">$admin->name</span>
+                                   <span class="userTel">$admin->department</span>
+                               </div>
+                               <div class="setArea">
+                               	<!--{if strlen($admin->number)>=14 }-->
+                                   <a class="pcIcon" title="PC登录">电脑图标</a>
+                                   <!--{/if}-->
+                                   <a class="cameras">
+                                       <img src="static/images/CameronIcon.png" />
+                                   </a>
+                                   <a class="{if $admin->mute}voiceOff{else}voiceOn{/if}">静音</a>
+                                   <a class="closeBtn">移除</a>
+                               </div>
+                            </li>
+                       	<!--{/if}-->
                         <!--{loop $mettingusers[1] $user}-->
                             <li callid="$user->callid">
                                 <div class="topics">
@@ -20,7 +44,7 @@
                                     </a>
                                 </div>
                                 <div class="userInfo">
-                                    <span class="fullNames {if $user->id==$create['id']}meetHost{/if}">$user->name</span>
+                                    <span class="fullNames">$user->name</span>
                                     <span class="userTel">$user->department</span>
                                 </div>
                                 <div class="setArea">

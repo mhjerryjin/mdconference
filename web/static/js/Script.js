@@ -178,16 +178,7 @@ $("#bodyBg").click(function () {
     $("#invitedialog").fadeOut(200)
     $("#bodyBg").fadeOut(200)
 })
-$("#search_key").keyup(function () {
-    var searchKey = $("#search_key").val();
-    if (searchKey != "") {
-        $("#clearBtn").show();
-    }
-})
-$("#clearBtn").click(function () {
-    $("#search_key").val("");
-    $("#clearBtn").hide();
-})
+
 $(".recordBtn").each(function () {
     $(this).click(function () {
         $(this).next("div.slideMenu").slideToggle(200);

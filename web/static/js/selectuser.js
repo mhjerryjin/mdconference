@@ -13,8 +13,13 @@ var selectuser = function (el, param) {
             _self.bindEvent = function () {
                 var search_input = $("#search_key"),
                     fromuser = $("#fromuser"),
-                    touser = $("#touser div.Hk_userList");
-
+                    touser = $("#touser div.Hk_userList"),
+                    clearBtn=$("#clearBtn");
+                clearBtn.click(function () {
+                	search_input.val("");
+                	_self.search();
+            	});
+                
                 search_input.keyup(function () {
                     _self.search();
                 });
@@ -46,10 +51,14 @@ var selectuser = function (el, param) {
             }
 
             _self.search = function () {
+            	
                 var keywords = $("#search_key").val(),
                     fromuser = $("#fromuser");
                 if (keywords=='') {
+                	$("#clearBtn").hide();
+                	fromuser.find("div.Hk_userList>div.searchItem").removeClass("Hidden");
                 } else {
+                	 $("#clearBtn").show();
                 	keywords=keywords.toLowerCase();
                     fromuser.find("div.Hk_userList>div.searchItem").addClass("Hidden");
                     fromuser.find("div.Hk_userList>div.searchItem").each(function () {
