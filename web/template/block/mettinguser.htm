@@ -1,16 +1,16 @@
 <div class="Hk_MeetCount">
-                    <a class="joined highlight" id="joinBtn">
+                    <a class="joined {if $joinBtn=='joinBtn'}highlight{/if}" id="joinBtn">
                         <span class="join1">已加入</span>
                         <span class="join1">$joinnum 人</span>
                     </a>
-                    <a class="Unjoin" id="unJoinBtn">
+                    <a class="Unjoin {if $joinBtn=='unJoinBtn'}highlight{/if}" id="unJoinBtn">
                         <span class="join2">未加入</span>
                         <span class="join2">$nojoinnum 人</span>
                     </a>
                     <a class="addUser" id="addUserBtn">邀请成员</a>
                 </div>
                 <div class="Hk_areas">
-                    <div class="Hk_joinList" id="join_con">
+                    <div class="Hk_joinList" {if $joinBtn=='unJoinBtn'}style="display:none;"{/if} id="join_con">
                         <ul>
                         <!--{loop $mettingusers[1] $user}-->
                             <li callid="$user->callid">
@@ -20,7 +20,7 @@
                                     </a>
                                 </div>
                                 <div class="userInfo">
-                                    <span class="fullNames">$user->name</span>
+                                    <span class="fullNames {if $user->id==$create['id']}meetHost{/if}">$user->name</span>
                                     <span class="userTel">$user->department</span>
                                 </div>
                                 <div class="setArea">
@@ -30,14 +30,14 @@
                                     <a class="cameras">
                                         <img src="static/images/CameronIcon.png" />
                                     </a>
-                                    <a class="voiceOn">静音</a>
+                                    <a class="{if $user->mute}voiceOff{else}voiceOn{/if}">静音</a>
                                     <a class="closeBtn">移除</a>
                                 </div>
                             </li>
                             <!--{/loop}-->
                         </ul>
                     </div>
-                    <div class="Hk_joinList Hk_unjoins" id="unJoin_con" style="display:none">
+                    <div class="Hk_joinList Hk_unjoins" id="unJoin_con" {if $joinBtn=='joinBtn'}style="display:none"{/if}>
                         <ul>
                        	<!--{loop $mettingusers[0] $user}-->
                             <li>
@@ -47,7 +47,7 @@
                                     </a>
                                 </div>
                                 <div class="userInfo">
-                                    <span class="fullNames">$user->name</span>
+                                    <span class="fullNames {if $user->id==$create['id']}meetHost{/if}">$user->name</span>
                                     <span class="userTel">$user->department</span>
                                 </div>
                                 <div class="setArea">

@@ -48,11 +48,7 @@ global.setCookie=function(name, value) {
     var nextyear = new Date();
     nextyear.setFullYear(nextyear.getFullYear() + 10);
     var expireDate = nextyear.toGMTString();
-    if (document.domain.indexOf('.mingdao.com') == -1) {
-        document.cookie = name + "=" + escape(value) + ";expires=" + expireDate + ";path=/";
-    } else {
-        document.cookie = name + "=" + escape(value) + ";expires=" + expireDate + ";path=/;domain=.mingdao.com";
-    }
+    document.cookie = name + "=" + escape(value) + ";expires=" + expireDate + ";path=/";
 }
 //读取
 global.getCookie=function(name) {
