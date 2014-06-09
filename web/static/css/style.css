@@ -37,8 +37,20 @@ a:link {
   text-decoration: none;
   color: #333;
 }
+.meetHost {
+  color: #e97900;
+}
 .clear {
   clear: both;
+}
+.clearBtn {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin: 16px 0 0 10px;
+  text-indent: -9999em;
+  display: none;
+  background: url(../images/delete.png) center center no-repeat;
 }
 /* start */
 .Hk_wrap {
@@ -733,10 +745,11 @@ a:link {
   height: 33px;
   line-height: 33px;
   color: #111;
-  width: 540px;
+  width: 500px;
   background: #FFF;
   border: 0;
   margin-top: 6px;
+  float: left;
 }
 .Hk_SearchWrap .Hk_Search .Hk_SearchArea .Hk_serBtn {
   width: 23px;

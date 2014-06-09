@@ -85,25 +85,17 @@ $("#userCheck").click(function () {
 $("#camera").click(function () {
     $("#camera span").toggleClass("camBtn2","camBtn")
     $("#camera_con").toggle();
-    if ($("#PC span").hasClass("PC2")) {
-        $("#PC span").removeClass("PC2")
-        $("#message_con").hide();
-        $("#desktop").hide();
-    } else {
-        $("#message_con").toggle();
-        $("#desktop").hide();
-    }
+    $("#message_con").toggle();
+    $("#PC span").removeClass("PC2")
+    $("#desktop").hide();
 })
 $("#PC").click(function () {
     $("#PC span").toggleClass("PC2", "PC")
-    if ($("#camera span").hasClass("camBtn2")) {
-        $("#camera span").removeClass("camBtn2")
-        $("#camera_con").hide();
-        $("#message_con").hide();
-    } else {
-        $("#camera_con").hide();
-        $("#message_con").toggle();
-    }
+    $("#camera span").removeClass("camBtn2")
+    $("#camera_con").hide();
+    $("#desktop").toggle();
+    $("#message_con").toggle();
+    $("#camera_con").hide();
 })
 $("#lock").click(function () {
     $("#lock span").toggleClass("lock2", "lock")
@@ -173,14 +165,4 @@ $("#invitedialog").delegate("#closeBtn", "click", function () {
 $("#bodyBg").click(function () {
     $("#invitedialog").fadeOut(200)
     $("#bodyBg").fadeOut(200)
-})
-$("#search_key").keyup(function () {
-    var searchKey = $("#search_key").val();
-    if (searchKey != "") {
-        $("#clearBtn").show();
-    }
-})
-$("#clearBtn").click(function () {
-    $("#search_key").val("");
-    $("#clearBtn").hide();
 })
