@@ -40,6 +40,15 @@ class Account{
 		$response = $this->oauth->oAuthRequest($this->oauth->host.'user/list', 'GET', $params);
 		return json_decode($response, true);
 	}
+	
+	function sent_sys($uid,$pid,$msg){
+		$params = array('u_id'=>$uid,'p_id'=>$pid,'msg'=>$msg);
+		$params['app_key']=$this->oauth->client_id;
+		$params['app_secret']=$this->oauth->client_secret;
+		$params['format']='json';
+		$response = $this->oauth->oAuthRequest($this->oauth->host.'message/create_sys', 'POST', $params);
+		return json_decode($response, true);
+	}
 }
 
 ?>

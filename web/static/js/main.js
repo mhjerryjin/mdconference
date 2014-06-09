@@ -88,7 +88,7 @@ main.joinConf=function(users,callback){
  * users[{callid:''}] --callid：参会用户列表的callid
  */
 main.batch=function($controller,users,callback){
-	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id,uid:main.current.id,users:users},function (data){
+	global.request(config.yuntongxun.geturl($controller),{id:main.metting.id,uid:'',users:users},function (data){
 		callback&&callback(data);
 	});
 }
@@ -106,7 +106,7 @@ main.quitConf=function(users,callback){
  * 批量静音
  * users[{callid:''}] --callid：参会用户列表的callid
  */
-main.muteConf=function(users){
+main.muteConf=function(users,callback){
 	main.batch('muteConf',users,function(data){
 		callback&&callback(data);
 	});
@@ -116,7 +116,7 @@ main.muteConf=function(users){
  * 批量取消静音
  * users[{callid:''}] --callid：参会用户列表的callid
  */
-main.unmuteConf=function(users){
+main.unmuteConf=function(users,callback){
 	main.batch('unmuteConf',users,function(data){
 		callback&&callback(data);
 	});
