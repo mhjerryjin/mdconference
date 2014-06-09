@@ -1,7 +1,6 @@
 <?php
 include_once('./source/yuntongxun/yuntongxun.php');
 
-
 $conUsers=json_decode(request("getConfUsers",array("id"=>$_REQUEST['id'])));
 
 if(empty($conUsers->users)){
@@ -53,7 +52,7 @@ foreach ($joins as $join){
 		$join->department=$usersinfoarr[$join->id]['department'];
 	}else{
 		$join->avatar='static/images/default.gif';
-		if(preg_match('/^[A-Z0-9]{8}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{12}/',$join->id))
+		if(!preg_match('/^[A-Z0-9]{8}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{4}\-[A-Z0-9]{12}/',strtoupper($join->id)))
 		{
 			$join->department='来宾';
 		}
@@ -68,6 +67,7 @@ foreach ($joins as $join){
 	}
 	
 }
+
 $joinnum=count($mettingusers[1]);
 $nojoinnum=count($mettingusers[0]);
 $joinBtn=empty($_COOKIE['mettinguserbtn'])?'joinBtn':$_COOKIE['mettinguserbtn'];
