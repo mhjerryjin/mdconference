@@ -85,17 +85,25 @@ $("#userCheck").click(function () {
 $("#camera").click(function () {
     $("#camera span").toggleClass("camBtn2","camBtn")
     $("#camera_con").toggle();
-    $("#message_con").toggle();
-    $("#PC span").removeClass("PC2")
-    $("#desktop").hide();
+    if ($("#PC span").hasClass("PC2")) {
+        $("#PC span").removeClass("PC2")
+        $("#message_con").hide();
+        $("#desktop").hide();
+    } else {
+        $("#message_con").toggle();
+        $("#desktop").hide();
+    }
 })
 $("#PC").click(function () {
     $("#PC span").toggleClass("PC2", "PC")
-    $("#camera span").removeClass("camBtn2")
-    $("#camera_con").hide();
-    $("#desktop").toggle();
-    $("#message_con").toggle();
-    $("#camera_con").hide();
+    if ($("#camera span").hasClass("camBtn2")) {
+        $("#camera span").removeClass("camBtn2")
+        $("#camera_con").hide();
+        $("#message_con").hide();
+    } else {
+        $("#camera_con").hide();
+        $("#message_con").toggle();
+    }
 })
 $("#lock").click(function () {
     $("#lock span").toggleClass("lock2", "lock")
