@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['mdtoken'])){
+if(!isset($_SESSION['mdtoken'])&&!isset($_SESSION['guest'])){
 	$result = nologin();
 	echo $result;
 	exit();

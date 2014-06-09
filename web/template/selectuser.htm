@@ -1,11 +1,15 @@
 <!--{template common/header}-->
+
+
+<script src="static/js/selectuser.js"></script>
+
 <!--{if empty($_GET['mod'])}-->
 <!--{template block/selectuser}-->
 <!--{else}-->
 <!--{template block/selectuserdialog}-->
 <!--{/if}-->
+
 <script src="static/js/Script.js"></script>
-<script src="static/js/selectuser.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#avatar").attr("src", main.current.avatar100);
@@ -13,7 +17,6 @@
         $("#userjob").text( main.current.job);
         $("#companyname").text( main.current.company);
 	});
-	var selectuser = new selectuser($("#user_list")[0]);
 </script>
 
 <!--{template common/mainfooter}-->

@@ -1,4 +1,6 @@
 <?php
+	@header('Content-type: text/html;charset=UTF-8');
+	
 	include_once('./source/function.php');
 	session_start();
 	//如果没登录，并且不是来宾
@@ -57,6 +59,9 @@
 			$check_pasword=$_POST['password'];
 			if($check_pasword==$metting->pwd){
 				$allowjoin=true;
+			}else{
+				echo '<script>alert("密码输入错误");history.back();</script>';
+				exit();
 			}
 		}
 	}else{

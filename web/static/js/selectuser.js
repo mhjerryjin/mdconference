@@ -1,7 +1,11 @@
 var selectuser = function (el, param) {
             var _self = this,
                 setting = $.extend({
-                    id: 'user_list'
+                    id: 'user_list',
+                    next:function(users){
+                    	$("#from").find("input[name='users']").val(JSON.stringify(users));
+                    	$("#from").attr("action","invite.php?id="+main.metting.id).submit();
+                    }
                 }, param);
             _self.init = function () {
                     _self.bindEvent();
@@ -77,8 +81,7 @@ var selectuser = function (el, param) {
             	}
             	users.push({id:main.current.id,name:main.current.name,number:'',avatar:main.current.avatar100});
             	
-            	$("#from").find("input[name='users']").val(JSON.stringify(users));
-            	$("#from").attr("action","invite.php?id="+main.metting.id).submit();
+            	setting.next(users);
             }
             _self.init();
         }
