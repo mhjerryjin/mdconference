@@ -98,21 +98,16 @@ body{background:url(static/images/loginBg.png) !important}
 <script src="static/js/Script.js"></script>
 <script src="static/js/swfobject.js"></script>
 <script src="static/js/Cloopen_sandbox.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $("#avatar").attr("src", main.current.avatar100);
-        $("#username").text(main.current.name);
-        $("#userjob").text(main.current.job);
-        $("#companyname").text(main.current.company);
-    });
-</script>
 <!--{if $current['user']['id']==$create['id']}-->
 <script type="text/javascript">
 	var iscreater=true;
 </script>
 <!--{/if}-->
+
 <script type="text/javascript">
-	
+	window.onbeforeunload=function(){
+			event.returnValue='关闭页面将导致会议结束，是否结束会议？';
+	}
 	$(function(){
 		/*设置为强制登录模式*/
 		Cloopen.forceLogin();
@@ -194,7 +189,9 @@ body{background:url(static/images/loginBg.png) !important}
         	}
         });
         setInterval(function(){
-        	$("#mettinguser").load("block.php?mod=mettinguser",{id:main.metting.id});
+        	$.get("block.php?mod=mettinguser",{id:main.metting.id},function(html){
+        		$("#mettinguser").html(html);
+        	});
         },5000);
 	});
 	/*更新日志*/

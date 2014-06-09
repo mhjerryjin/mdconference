@@ -48,6 +48,7 @@
 	}
 	
 	//允许访问，放到用户的允许访问列表里
+	
 	$mettings=array();
 	
 	if(!empty($metting->pwd))
@@ -66,7 +67,10 @@
 		$mettings=$_SESSION['mettings'];
 	}
 	if(in_array($_GET['id'], $mettings)){
-		$allowjoin=true;
+		if($mettings[$_GET['id']]['pwd']==$metting->pwd)
+			$allowjoin=true;
+		else
+			unset($mettings[$_GET['id']]);
 	}
 	
 	
@@ -75,15 +79,18 @@
 	}
 	
 	if(!in_array($_GET['id'], $mettings)){
-		$mettings[]=$_GET['id'];
+		$mettings[$_GET['id']]=array('id'=>$_GET['id'],'pwd'=>$metting->pwd);
 		$_SESSION['mettings']=$mettings;
 	}
 	
 	
 	$mettingcurrent=json_decode(request("getUser",array("id"=>$current['user']['id'])));
-	
-	request('setNumber',array('id'=>$_GET['id'],'uid'=>$current['user']['id'],'number'=>$mettingcurrent->voip));
-	
+	if(property_exists($mettingcurrent, 'voip')){
+		request('setNumber',array('id'=>$_GET['id'],'uid'=>$current['user']['id'],'number'=>$mettingcurrent->voip));
+	}else{
+		echo '<script>location.href="'.'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"].'";</script>';
+		exit();
+	}
 	
 	include_once ('./source/block/block_mettinguser.php');
 	
