@@ -184,3 +184,14 @@ $("#clearBtn").click(function () {
     $("#search_key").val("");
     $("#clearBtn").hide();
 })
+$(".recordBtn").each(function () {
+    $(this).click(function () {
+        $(this).next("div.slideMenu").slideToggle(200);
+        $(this).next("div.slideMenu").on("mouseleave", function () {
+            var timer = 0;
+            timer = setTimeout(function () {
+                $("div.slideMenu").slideUp(300)
+            }, 1000)
+        })
+    })
+})
