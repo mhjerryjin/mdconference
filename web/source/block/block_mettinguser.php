@@ -1,6 +1,7 @@
 <?php
 include_once('./source/yuntongxun/yuntongxun.php');
 
+
 $conUsers=json_decode(request("getConfUsers",array("id"=>$_REQUEST['id'])));
 
 if(empty($conUsers->users)){
@@ -31,6 +32,14 @@ if(!$isguest){
 	foreach ($usersinfo['users'] as $user){
 		$usersinfoarr[$user['id']]=$user;
 	}
+	
+	if(!isset($create))
+	{
+		$metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
+		
+		$userinfo=$account->get_user_by_uid($metting->uid);
+		$create=$userinfo['user'];
+	}
 }
 
 
@@ -50,4 +59,7 @@ foreach ($joins as $join){
 }
 $joinnum=count($mettingusers[1]);
 $nojoinnum=count($mettingusers[0]);
+$joinBtn=empty($_COOKIE['mettinguserbtn'])?'joinBtn':$_COOKIE['mettinguserbtn'];
+
+
 ?>

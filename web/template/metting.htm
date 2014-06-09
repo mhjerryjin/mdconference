@@ -192,10 +192,18 @@ body{background:url(static/images/loginBg.png) !important}
         	}
         });
 	});
+	var metting={loadRight:true};
 	var interval = setInterval(function(){
-    	$.get("block.php?mod=mettinguser",{id:main.metting.id},function(html){
-    		$("#mettinguser").html(html);
-    	});
+		if(!metting.loadRight){
+			setTimeout(function(){
+				metting.loadRight=true;
+			},5000);
+		}
+		if(metting.loadRight){
+    		$.get("block.php?mod=mettinguser",{id:main.metting.id},function(html){
+    			$("#mettinguser").html(html);
+    		});
+    	}
     },5000);
 	/*更新日志*/
 	function fn_updatelog(text){

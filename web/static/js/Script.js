@@ -116,6 +116,8 @@ $("#mettinguser").delegate("#joinBtn", "click", function () {
     $("#unJoinBtn").removeClass("highlight");
     $("#join_con").show();
     $("#unJoin_con").hide();
+    metting.loadRight=false;
+    global.setCookie('mettinguserbtn','joinBtn');
 
 })
 $("#mettinguser").delegate("#unJoinBtn", "click", function () {
@@ -123,6 +125,8 @@ $("#mettinguser").delegate("#unJoinBtn", "click", function () {
     $("#unJoinBtn").addClass("highlight");
     $("#join_con").hide();
     $("#unJoin_con").show();
+    metting.loadRight=false;
+    global.setCookie('mettinguserbtn','unJoinBtn');
 
 })
 $("#mettinguser").delegate("#addUserBtn", "click", function () {
