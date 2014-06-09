@@ -13,6 +13,7 @@ define("YUNTONGXUN_URL", $_config['yuntongxun']['url']);
 $result=request($op);
 switch ($op){
 	case "joinConf":
+	case "inviteConf":
 		send_sysmessage();
 		break;
 }

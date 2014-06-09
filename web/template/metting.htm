@@ -162,9 +162,10 @@ body{background:url(static/images/loginBg.png) !important}
         $("#mettinguser").delegate("a.voiceOn","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
+        		_this=this;
         		main.muteConf([{callid:callid}],function(data){
         			if(data.status){
-        				$(this).removeClass("voiceOn").addClass("voiceOff");
+        				$(_this).removeClass("voiceOn").addClass("voiceOff");
         			}
         		});
         		
@@ -173,9 +174,10 @@ body{background:url(static/images/loginBg.png) !important}
         $("#mettinguser").delegate("a.voiceOff","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
+        		_this=this;
         		main.unmuteConf([{callid:callid}],function(data){
         			if(data.status){
-        				$(this).removeClass("voiceOff").addClass("voiceOn");
+        				$(_this).removeClass("voiceOff").addClass("voiceOn");
         			}
         		});
         	}
@@ -183,17 +185,18 @@ body{background:url(static/images/loginBg.png) !important}
         $("#mettinguser").delegate("a.closeBtn","click",function(){
         	var callid=$(this).parents("li").first().attr("callid");
         	if(callid&&callid!=''){
+        		_this=this;
         		main.quitConf([{callid:callid}],function(data){
-        			$(this).parents("li").first().remove();
+        			$(_this).parents("li").first().remove();
         		});
         	}
         });
-        setInterval(function(){
-        	$.get("block.php?mod=mettinguser",{id:main.metting.id},function(html){
-        		$("#mettinguser").html(html);
-        	});
-        },5000);
 	});
+	var interval = setInterval(function(){
+    	$.get("block.php?mod=mettinguser",{id:main.metting.id},function(html){
+    		$("#mettinguser").html(html);
+    	});
+    },5000);
 	/*更新日志*/
 	function fn_updatelog(text){
 	   $('#message_con').append('<p>'+text+'</p>');

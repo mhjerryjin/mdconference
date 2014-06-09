@@ -21,10 +21,12 @@
                                 </div>
                                 <div class="userInfo">
                                     <span class="fullNames">$user->name</span>
-                                    <span class="userTel">$user->number</span>
+                                    <span class="userTel">$user->department</span>
                                 </div>
                                 <div class="setArea">
-                                    <a class="pcIcon">电脑图标</a>
+                                	<!--{if strlen($user->number)>=14 }-->
+                                    <a class="pcIcon" title="PC登录">电脑图标</a>
+                                    <!--{/if}-->
                                     <a class="cameras">
                                         <img src="static/images/CameronIcon.png" />
                                     </a>
@@ -46,7 +48,7 @@
                                 </div>
                                 <div class="userInfo">
                                     <span class="fullNames">$user->name</span>
-                                    <span class="userTel">$user->number</span>
+                                    <span class="userTel">$user->department</span>
                                 </div>
                                 <div class="setArea">
                                     <a class="pcIcon">电脑图标</a>

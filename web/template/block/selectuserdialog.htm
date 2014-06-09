@@ -157,10 +157,18 @@
             <div class="clear"></div>
         </div>
         <div class="Hk_pagination">
-            <a class="Hk_next tp_0" href="#">
+            <a class="Hk_next tp_0" href="javascript:selectuser.next();">
                 <span class="text tp_0">确认</span>
             </a>
         </div>
      
     </div>
- 
+ <script type="text/javascript">
+ 	var selectuser = new selectuser($("#user_list")[0],{next:function(users){
+		main.inviteConf(users,function(data){
+			if(data.status){
+				alert("邀请已发出");
+			}
+		})
+	}});
+ </script>

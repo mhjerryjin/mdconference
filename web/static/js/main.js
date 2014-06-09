@@ -97,9 +97,7 @@ main.batch=function($controller,users,callback){
  * users[{callid:''}] --callid：参会用户列表的callid
  */
 main.quitConf=function(users,callback){
-	main.batch('quitConf',users,function(data){
-		callback&&callback(data);
-	});
+	main.batch('quitConf',users,callback);
 }
 
 /*
@@ -107,9 +105,7 @@ main.quitConf=function(users,callback){
  * users[{callid:''}] --callid：参会用户列表的callid
  */
 main.muteConf=function(users,callback){
-	main.batch('muteConf',users,function(data){
-		callback&&callback(data);
-	});
+	main.batch('muteConf',users,callback);
 }
 
 /*
@@ -117,8 +113,6 @@ main.muteConf=function(users,callback){
  * users[{callid:''}] --callid：参会用户列表的callid
  */
 main.unmuteConf=function(users,callback){
-	main.batch('unmuteConf',users,function(data){
-		callback&&callback(data);
-	});
+	main.batch('unmuteConf',users,callback);
 }
 

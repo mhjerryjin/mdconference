@@ -41,8 +41,10 @@ $mettingusers[1]=array();
 foreach ($joins as $join){
 	if(!empty($join->id)&&isset($usersinfoarr[$join->id])){
 		$join->avatar=$usersinfoarr[$join->id]['avatar100'];
+		$join->department=$usersinfoarr[$join->id]['department'];
 	}else{
 		$join->avatar='static/images/default.gif';
+		$join->department='来宾';
 	}
 	$mettingusers[$join->state][]=$join;
 }
