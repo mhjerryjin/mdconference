@@ -1,0 +1,10 @@
+appid: 428130798
+web_health: true
+web_health_conf:
+    path: /
+    timeout: 2000ms
+    success: [200,201,301,302]
+try_restart:
+    enable: true
+    fall: 2
+start: $NODEJS $USER_DIR/index.js

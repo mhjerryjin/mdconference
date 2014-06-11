@@ -38,15 +38,15 @@ function request($controller){
 function send_sysmessage(){
 	$oauth=new AccessToken(CLIENT_ID,CLIENT_SECRET,$_SESSION['mdtoken']);
 	$account=new Account($oauth);
-	
+
 	$current=$account->get_user_baseinfo();
-	
+
 	// 接收参数
 	$str = file_get_contents("php://input");
 	// 转为json
 	$param = json_decode($str);
 	$users=$param->users;
-	$link='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/metting.php?id='.$param->id;
+	$link=WEB_URI.'metting.php?id='.$param->id;
 	$msg=$current['user']['name'].'邀请您加入会议，请<a href="'.$link.'" target="_blank">点击这里加入</a> 如果不能点击请复制此链接进入  '.$link;
 	foreach ($users as $user){
 		if(!empty($user->id)&&$current['user']['id']!=$user->id){
@@ -54,6 +54,5 @@ function send_sysmessage(){
 		}
 	}
 }
-
 
 ?>

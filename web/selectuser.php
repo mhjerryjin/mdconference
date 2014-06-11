@@ -25,10 +25,8 @@
     $port=$_SERVER["SERVER_PORT"];
     
     $metting = json_decode(request('getConf',array('id'=>$_GET['id'])));
-    
-    if($port==80)
-    	$port='';
-    $invitelink='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/metting.php?id='.$_GET['id'];
+
+    $invitelink=WEB_URI.'metting.php?id='.$_GET['id'];
     
     
     include template('selectuser');

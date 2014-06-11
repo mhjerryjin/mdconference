@@ -63,16 +63,16 @@ class zh2py
         "GSZZQLYLWTJPFSYASMCJBTZYYCWMYTZSJJLJCQLWZMALBXYFBPNLSFHTGJWEJJXXGLLJSTGSHJQLZFKCGNNNSZFDEQFHBS",
         "AQTGYLBXMMYGSZLDYDQMJJRGBJTKGDHGKBLQKBDMBYLXWCXYTTYBKMRTJZXQJBHLMHMJJZMQASLDCYXYQDLQCAFYWYXQHZ",
         );
-    function utf8_to_gbk($string)//编码转换,必须转换成GB2312字符,这里只是简单的判断并不是很准确,可以自己写一个.
+    static function utf8_to_gbk($string)//编码转换,必须转换成GB2312字符,这里只是简单的判断并不是很准确,可以自己写一个.
     {
     //if (mb_check_encoding($string,'gb2312'))
      //   return $string;
-    	if (function_exists('iconv'))
-        	return iconv("utf-8","gb2312//IGNORE",$string);
+    	//if (function_exists('iconv'))
+        //	return iconv("utf-8","gb2312//IGNORE",$string);
     	return mb_convert_encoding($string,'gb2312','utf-8'); 
     }
 
-    function conv($str)
+    static function conv($str)
     {
     $str = self::utf8_to_gbk($str);
     $len = strlen($str);
